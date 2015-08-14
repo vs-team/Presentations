@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Compiler.ILX</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.EraseIlxFuncs">
+<summary>
+ Internal use only.  Erase closures
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.EraseIlxUnions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.IlxSettings.ilxFsharpCoreLibScopeRef">
+<summary>
+ Scope references for FSharp.Core.dll
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.IlxSettings">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.PrettyNaming.TryChopPropertyName(System.String)">
+<summary>
+ Try to chop &quot;get_&quot; or &quot;set_&quot; from a string
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.PrettyNaming.IsLongIdentifierPartCharacter(System.Char)">
+<summary>
+ Is this character a part of a long identifier 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.PrettyNaming.IsIdentifierPartCharacter(System.Char)">
+<summary>
+ The characters that are allowed to be in an identifier.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.PrettyNaming.IsIdentifierFirstCharacter(System.Char)">
+<summary>
+ The characters that are allowed to be the first character of an identifier.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.PrettyNaming.parenGet">
+<summary>
+ Anything to do with special names of identifiers and other lexical rules 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.PrettyNaming">
+<summary>
+ Anything to do with special names of identifiers and other lexical rules 
+</summary>
+</member>
+</members>
+</doc>

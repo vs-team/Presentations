@@ -1,0 +1,2207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Compiler.VS</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.OutputCollector">
+<summary>
+ Collect the output from the stdout and stderr streams, character by character,
+ recording the console color used along the way.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.DelayAndForwardErrorLogger">
+<summary>
+ This error logger delays the messages it recieves. At the end, call ForwardDelayedErrorsAndWarnings
+ to send the held messages.     
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Driver.ILResource.get_Bytes(Microsoft.FSharp.Compiler.AbstractIL.IL.ILResource)">
+<summary>
+ Read the bytes from a resource local to an assembly
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Driver.AdjustForScriptCompile(Microsoft.FSharp.Compiler.Build.TcConfigBuilder,Microsoft.FSharp.Collections.FSharpList{System.String},Microsoft.FSharp.Compiler.Lexhelp.LexResourceManager)">
+<summary>
+ Check for .fsx and, if present, compute the load closure for of #loaded files.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Driver.ErrorLoggerThatQuitsAfterMaxErrors(Microsoft.FSharp.Compiler.Build.TcConfigBuilder,Microsoft.FSharp.Compiler.ErrorLogger.Exiter)">
+<summary>
+ Create an error logger that counts and prints errors 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.FSharpResidentCompiler.FSharpCompilationServer">
+<summary>
+ The compilation server, which runs in the server process. Accessed by clients using .NET remoting.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.FSharpResidentCompiler">
+<summary>
+ Implement the optional resident compilation service
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.FileWriter">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.StaticLinker">
+<summary>
+ OPTIONAL STATIC LINKING OF ALL DLLs THAT DEPEND ON THE F# LIBRARY
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.MainModuleBuilder">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Driver.AttributeHelpers.TryFindStringAttribute(Microsoft.FSharp.Compiler.Env.TcGlobals,System.String,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.Tast.Attrib})">
+<summary>
+ Try to find an attribute that takes a string argument
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.AttributeHelpers">
+<summary>
+ Helpers for finding attributes
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.ManifestResourceFormat">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.VersionResourceFormat">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.ResFileFormat">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.BinaryGenerationUtilities">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.XmlDocWriter">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver.InterfaceFileWriter">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Driver">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.BuildDescriptionScope.GetInitialPartialBuild(Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.Object}}},Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.Object}})">
+<summary>
+ Set the conrete inputs for this build. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.BuildDescriptionScope.DeclareVectorOutput``1(System.String,Microsoft.FSharp.Compiler.IncrementalBuild.Vector{``0})">
+<summary>
+ Declare a named vector output.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.BuildDescriptionScope.DeclareScalarOutput``1(System.String,Microsoft.FSharp.Compiler.IncrementalBuild.Scalar{``0})">
+<summary>
+ Declare a named scalar output.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalBuild.BuildDescriptionScope">
+<summary>
+ Declare build outputs and bind them to real values.
+ Only required for unit testing.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalBuild.PartialBuild">
+<summary>
+ A set of build rules and the corresponding, possibly partial, results from building.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalBuild.Vector`1">
+<summary>
+ A build vector.        
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.GetVectorResultBySlot``1(System.String,System.Int32,Microsoft.FSharp.Compiler.IncrementalBuild.PartialBuild)">
+<summary>
+ Get an element of vector result or None if there were no results. Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.GetVectorResult``1(System.String,Microsoft.FSharp.Compiler.IncrementalBuild.PartialBuild)">
+<summary>
+ Get a result vector. All results must be available or thrown an exception. Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.GetScalarResult``1(System.String,Microsoft.FSharp.Compiler.IncrementalBuild.PartialBuild)">
+<summary>
+ Get a scalar vector. Result must be available. Only required for unit testing.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalBuild.Step">
+<summary>
+ Do one step in the build. Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Eval(System.String,Microsoft.FSharp.Compiler.IncrementalBuild.PartialBuild)">
+<summary>
+ Evaluate a build. Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.InputVector``1(System.String)">
+<summary>
+ Declares a scalar build input.
+ Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.InputScalar``1(System.String)">
+<summary>
+ Declares a vector build input.
+ Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Vector.AsScalar``1(System.String,Microsoft.FSharp.Compiler.IncrementalBuild.Vector{``0})">
+<summary>
+ Convert a Vector into a Scalar.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Vector.Demultiplex``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0[],``1},Microsoft.FSharp.Compiler.IncrementalBuild.Vector{``0})">
+<summary>
+ Apply a function to a vector to get a scalar value.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Vector.ScanLeft``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.Eventually{``0}}},Microsoft.FSharp.Compiler.IncrementalBuild.Scalar{``0},Microsoft.FSharp.Compiler.IncrementalBuild.Vector{``1})">
+<summary>
+ Apply a function to each element of the vector, threading an accumulator argument
+ through the computation. Returns intermediate results in a vector.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Vector.Stamp``1(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,System.DateTime},Microsoft.FSharp.Compiler.IncrementalBuild.Vector{``0})">
+<summary>
+ Updates the creates a new vector with the same items but with 
+ timestamp specified by the passed-in function.  
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Vector.Map``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Compiler.IncrementalBuild.Vector{``0})">
+<summary>
+ Maps one vector to another using the given function.    
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalBuild.Vector">
+<summary>
+ Methods for acting on build Vectors
+ Only required for unit testing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Scalar.Multiplex``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,``1[]},Microsoft.FSharp.Compiler.IncrementalBuild.Scalar{``0})">
+<summary>
+ Apply a function to scalar value to produce a vector.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalBuild.Scalar.Map``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Compiler.IncrementalBuild.Scalar{``0})">
+<summary>
+ Apply a function to one scalar to produce another.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalBuild.Scalar">
+<summary>
+ Methods for acting on build Scalars
+ Only required for unit testing.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalBuild">
+<summary>
+ Generalized Incremental Builder. This is exposed only for unittesting purposes.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.ThereAreLiveTypeProviders">
+<summary>
+ Whether there are any &apos;live&apos; type providers that may need a refresh when a project is Cleaned
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.TcConfig">
+<summary>
+ The TcConfig passed in to the builder creation.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.IsAlive">
+<summary>
+ Check if the builder is not disposed
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.ImportedCcusInvalidated">
+<summary>
+ Raised when a type provider invalidates the build.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.Dependencies">
+<summary>
+ The list of files the build depends on
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.BeforeTypeCheckFile">
+<summary>
+ Raised just before a file is type-checked, to invalidate the state of the file in VS and force VS to request a new direct typecheck of the file.
+ The incremental builder also typechecks the file (error and intellisense results from the backgroud builder are not
+ used by VS). 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.TypeCheck">
+<summary>
+ Get the final typecheck result. Only allowed when &apos;generateTypedImplFiles&apos; was set on Create, otherwise the TypedAssembly will have not implementations.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.Step">
+<summary>
+ Perform one step in the F# build.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.IncrementUsageCount">
+<summary>
+ Increment the usage count on the IncrementalBuilder by 1. Ths initial usage count is 0. The returns an IDisposable which will 
+ decrement the usage count on the entire build by 1 and dispose if it is no longer used by anyone.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.GetSlotsCount">
+<summary>
+ Get the number of slots on the vector of parse results
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.GetSlotOfFileName(System.String)">
+<summary>
+ Attempts to find the slot of the given input file name. Throws an exception if it couldn&apos;t find it.    
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.GetParseResultsBySlot(System.Int32)">
+<summary>
+ Await the untyped parse results for a particular slot in the vector of parse results.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IncrementalBuilder.GetAntecedentTypeCheckResultsBySlot(System.Int32)">
+<summary>
+ Ensure that the given file has been typechecked.
+ Get the preceding typecheck state of a slot, allow stale results.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.IBEvent">
+<summary>
+ Used for unit testing
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.GetCurrentIncrementalBuildEventNum">
+<summary>
+ Used for unit testing
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.IncrementalFSharpBuild.GetMostRecentIncrementalBuildEvents(System.Int32)">
+<summary>
+ Used for unit testing
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.IncrementalFSharpBuild">
+<summary>
+ Incremental builder for F# parsing and type checking.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices.TypeCheckScript(System.String,System.String,System.String[])">
+<summary>
+ For errors, quick info, goto-definition, declaration list intellisense, method overload intellisense
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices.TokenizeLine(System.String,System.Int64)">
+<summary>
+ Tokenize a single line, returning token information and a tokenization state represented by an integer
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices.TokenizeFile(System.String)">
+<summary>
+ Tokenize an entire file, line by line
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices.MatchBraces(System.String,System.String)">
+<summary>
+ Return information about matching braces in a single file.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices.CompileToDynamicAssembly(System.String[],Microsoft.FSharp.Core.FSharpOption{System.Tuple{System.IO.TextWriter,System.IO.TextWriter}})">
+<summary>
+ Compiles to a dynamic assembly usinng the given flags.  Any source files names 
+ are resolved via the FileSystem API. An output file name must be given by a -o flag, but this will not
+ be written - instead a dynamic assembly will be created and loaded.
+
+ If the &apos;execute&apos; parameter is given the entry points for the code are executed and 
+ the given TextWriters are used for the stdout and stderr streams respectively. In this 
+ case, a global setting is modified during the execution.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices.Compile(System.String[])">
+<summary>
+ Compile using the given flags.  Source files names are resolved via the FileSystem API. The output file must be given by a -o flag. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.SimpleSourceCodeServices">
+<summary>
+ Provides simple services for checking and compiling F# scripts
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults.FullResults">
+<summary>
+ Get the full type checking results 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults.Errors">
+<summary>
+ Return the errors resulting from the type-checking
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults.GetF1Keyword(System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String})">
+<summary>
+ Get the Visual Studio F1-help keyword for the item at the given position
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults.GetDeclarations(System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.String,System.String},System.String}})">
+<summary>
+ Get the declarations at the given code location.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults.GetDeclarationLocation(System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String},System.Boolean)">
+<summary>
+ Get the location of the declaration at the given position
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults.GetDataTipText(System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpList{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.String,System.String},System.String}})">
+<summary>
+ Get the data tip text at the given position
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.TypeCheckResults">
+<summary>
+ Represents the results of type checking
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.Declaration.Name">
+<summary>
+ Get the name of a declaration
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.Declaration.GetDescription">
+<summary>
+ Compute the description for a declaration
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.Declaration">
+<summary>
+ Represents a declaration returned by GetDeclarations
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SimpleSourceCodeServices.Utils">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions.LoadTime">
+<summary>
+ Timestamp of project/script load
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions.UseScriptResolutionRules">
+<summary>
+ When true, use the reference resolution rules for scripts rather than the rules for compiler.
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions.IsIncompleteTypeCheckEnvironment">
+<summary>
+ When true, the typechecking environment is known a priori to be incomplete. 
+ This can happen, for example, when a .fs file is opened outside of a project.
+ It may be appropriate, then, to not show error messages related to type checking
+ since they will just be noise.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions">
+<summary>
+ A set of key information for the language service&apos;s internal caches of project/script build information for a particular source file
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipElement.DataTipElementCompositionError">
+<summary>
+ An error occurred formatting this element
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipElement.DataTipElementGroup">
+<summary>
+ For example, a method overload group.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipElement.DataTipElement">
+<summary>
+ A single type, method, etc with comment.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipElement">
+<summary>
+ A single data tip display element
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipText.DataTipText">
+<summary>
+ A list of data tip elements to display.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DataTipText">
+<summary>
+ Information for building a data tip box.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DeclarationItem">
+<summary>
+ Represents an item to be displayed in the navigation bar
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DependencyChangeCode">
+<summary>
+ Identical to _VSFILECHANGEFLAGS in vsshell.idl
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclResult.DeclFound">
+<summary>
+ found declaration; return (position-in-file, name-of-file)
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FindDeclResult.DeclNotFound">
+<summary>
+ declaration not found + reason
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GlobalForegroundTypeCheckCountStatistic">
+<summary>
+ Report a statistic for testability
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GlobalForegroundParseCountStatistic">
+<summary>
+ Report a statistic for testability
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.WaitForBackgroundCompile">
+<summary>
+ Block until the background compile finishes.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.UntypedParseForSlot(System.Int32,Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ For QuickSearch index - not used by VS2008/VS2010/VS11
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.UntypedParse(System.String,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ Parse a source code file, returning a handle that can be used for obtaining navigation bar information
+ To get the full information, call &apos;TypeCheckSource&apos; method on the result
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.TypeCheckSource(Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo,System.String,System.Int32,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions,Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete,System.Object)">
+<summary>
+ Typecheck a source code file, returning a handle to the results of the parse including
+ the reconstructed types in the file.
+
+ Return None if the background builder is not yet done prepring the type check results for the antecedent to the 
+ file.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.TryGetRecentTypeCheckResultsForFile(System.String,Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ Try to get recent type check results for a file. This may arbitrarily refuse to return any
+ results if the InteractiveChecker would like a chance to recheck the file, in which case
+ UntypedParse and TypeCheckSource should be called. If the source of the file
+ has changed the results returned by this function may be out of date, though may
+ still be usable for generating intellsense menus and information.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.StopBackgroundCompile">
+<summary>
+ Stop the background compile.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.StartBackgroundCompile(Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ Begin background parsing the given project.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.NotifyProjectCleaned(Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ This function is called when a project has been cleaned/rebuilt, and thus any live type providers should be refreshed.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.MatchBraces(System.String,System.String,Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ Parse a source code file, returning information about brace matching in the file
+ Return an enumeration of the matching parethetical tokens in the file
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.InvalidateConfiguration(Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ This function is called when the configuration is known to have changed for reasons not encoded in the CheckOptions.
+ For example, dependent references may have been deleted or created.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.InvalidateAll">
+<summary>
+ This function is called when the entire environment is known to have changed for reasons not encoded in the CheckOptions of any project/compilation.
+ For example, the type provider approvals file may have changed.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetSlotsCount(Microsoft.FSharp.Compiler.SourceCodeServices.CheckOptions)">
+<summary>
+ For QuickSearch index - not used by VS2008/VS2010/VS11
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetCheckOptionsFromScriptRoot(System.String,System.String,System.DateTime,System.String[])">
+<summary>
+ For a given script file, get the CheckOptions implied by the #load closure. Optional &apos;otherFlags&apos;
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.GetCheckOptionsFromScriptRoot(System.String,System.String,System.DateTime)">
+<summary>
+ For a given script file, get the CheckOptions implied by the #load closure
+ We keep this around for now as this is the API entry point expected by the MonoDevelop 3.0 support
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.Create(Microsoft.FSharp.Compiler.SourceCodeServices.NotifyFileTypeCheckStateIsDirty)">
+<summary>
+ Create an instance of an InteractiveChecker.  Currently resources are not reclaimed.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.InteractiveChecker.ClearLanguageServiceRootCachesAndCollectAndFinalizeAllTransients">
+<summary>
+ Flush all caches and garbage collect
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.IsResultObsolete">
+<summary>
+ Callback that indicates whether a requested result has become obsolete.    
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.LexState">
+<summary>
+ Represents encoded information for the end-of-line continutation of lexing
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.LineTokenizer.ScanToken(System.Int64)">
+<summary>
+ Scan one token from the line
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.LineTokenizer">
+<summary>
+ Object to tokenize a line of F# source code, starting with the given lexState.  The lexState should be 0 for
+ the first line of text. Returns an array of ranges of the text and two enumerations categorizing the
+ tokens and characters covered by that range, i.e. TokenColorKind and TokenCharKind.  The enumerations
+ are somewhat adhoc but useful enough to give good colorization options to the user in an IDE.
+
+ A new lexState is also returned.  An IDE-plugin should in general cache the lexState 
+ values for each line of the edited code.
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.Method.IsStaticArguments">
+<summary>
+ Indicates that this not really a method, but actually a static arguments list, like TP&lt;42,&quot;foo&quot;&gt; ?
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NavigationItems">
+<summary>
+ Represents result of &apos;GetNavigationItems&apos; operation - this contains
+ all the members and currently selected indices. First level correspond to
+ types &amp; modules and second level are methods etc.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NotifyFileTypeCheckStateIsDirty">
+<summary>
+ This file has become eligible to be re-typechecked.
+ This notifies the language service that it needs to set the dirty flag on files whose typecheck antecedents have changed.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Position">
+<summary>
+ A line/column pair
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Range">
+<summary>
+ A start-position/end-position pair
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.SourceTokenizer">
+<summary>
+ Tokenizer for a source file. Holds some expensive-to-compute resources at the scope of the file.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.FullMatchedLength">
+<summary>
+ The full length consumed by this match, including delayed tokens (which can be ignored in naive lexers)
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.TokenName">
+<summary>
+ Provides additional information about the token
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.Tag">
+<summary>
+ The tag is an integer identifier for the token
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.TriggerClass">
+<summary>
+ Actions taken when the token is typed
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.RightColumn">
+<summary>
+ Right column of the token.
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation.LeftColumn">
+<summary>
+ Left column of the token.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TokenInformation">
+<summary>
+ Information about a particular token from the tokenizer
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TopLevelDeclaration">
+<summary>
+ Represents top-level declarations (that should be in the type drop-down)
+ with nested declarations (that can be shown in the member drop-down)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckAnswer">
+<summary>
+ The result of calling TypeCheckResult including the possibility of abort and background compiler not caught up.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.Errors">
+<summary>
+ The errors returned by parsing a source file
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.GetMethods(System.Tuple{System.Int32,System.Int32},System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.String}})">
+<summary>
+ Resolve the names at the given location to a set of methods
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.GetF1Keyword(System.Tuple{System.Int32,System.Int32},System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
+<summary>
+ Resolve the names at the given location to give F1 keyword
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.GetExtraColorizations">
+<summary>
+ Get any extra colorization info that is available after the typecheck
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.GetDeclarations(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo},System.Tuple{System.Int32,System.Int32},System.String,System.Tuple{Microsoft.FSharp.Collections.FSharpList{System.String},System.String},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{System.Object,System.Tuple{System.Tuple{System.Int32,System.Int32},System.Tuple{System.Int32,System.Int32}}},System.Boolean})">
+<summary>
+ Intellisense autocompletions
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.GetDeclarationLocation(System.Tuple{System.Int32,System.Int32},System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.Int32,System.Boolean)">
+<summary>
+ Resolve the names at the given location to the declaration location of the corresponding construct
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults.GetDataTipText(System.Tuple{System.Int32,System.Int32},System.String,Microsoft.FSharp.Collections.FSharpList{System.String},System.Int32)">
+<summary>
+ Resolve the names at the given location to give a data tip 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TypeCheckResults">
+<summary>
+ A handle to the results of TypeCheckSource.  
+ A live object of this type keeps the background corresponding background builder (and type providers) alive (through reference-counting)
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.UnresolvedReferencesSet">
+<summary>
+ wraps the set of unresolved references providing implementations of Equals\GetHashCode
+ of this objects of this type can be used as parts of types with generated Equals\GetHashCode
+ i.e. records or DUs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo.FileName">
+<summary>
+ Name of the file for which this information were created
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo.ValidateBreakpointLocation(System.Tuple{System.Int32,System.Int32})">
+<summary>
+ Return the inner-most range associated with a possible breakpoint location
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo.GetNavigationItems">
+<summary>
+ Get declared items and the selected item at the specified location
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo.FindNoteworthyParamInfoLocations(System.Int32,System.Int32)">
+<summary>
+ Notable parse info for ParameterInfo at a given location
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfo.DependencyFiles">
+<summary>
+ When these files change then the build is invalid
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.XmlComment">
+<summary>
+ Describe a comment as either a block of text or a file+signature reference into an intellidoc file.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase`1.VisitTypeAbbrev(Microsoft.FSharp.Compiler.Ast.SynType,Microsoft.FSharp.Compiler.Range.range)">
+<summary>
+ VisitTypeAbbrev(ty,m), defaults to ignoring this leaf of the AST
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase`1.VisitModuleDecl(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.Ast.SynModuleDecl,Microsoft.FSharp.Core.FSharpOption{`0}},Microsoft.FSharp.Compiler.Ast.SynModuleDecl)">
+<summary>
+ VisitModuleDecl allows overriding module declaration behavior
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase`1.VisitMatchClause(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.Ast.SynMatchClause,Microsoft.FSharp.Core.FSharpOption{`0}},Microsoft.FSharp.Compiler.Ast.SynMatchClause)">
+<summary>
+ VisitMatchClause allows overriding clause behavior (note: by default it would defaultTraverse expression)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase`1.VisitImplicitInherit(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.Ast.SynExpr,Microsoft.FSharp.Core.FSharpOption{`0}},Microsoft.FSharp.Compiler.Ast.SynType,Microsoft.FSharp.Compiler.Ast.SynExpr,Microsoft.FSharp.Compiler.Range.range)">
+<summary>
+ VisitImplicitInherit(defaultTraverse,ty,expr,m), defaults to just visiting expr
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase`1.VisitExpr(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.TraverseStep},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.Ast.SynExpr,Microsoft.FSharp.Core.FSharpOption{`0}},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.Ast.SynExpr,Microsoft.FSharp.Core.FSharpOption{`0}},Microsoft.FSharp.Compiler.Ast.SynExpr)">
+<summary>
+ VisitExpr(path, traverseSynExpr, defaultTraverse, expr)
+ controls the behavior when a SynExpr is reached; it can just do 
+          defaultTraverse(expr)      if you have no special logic for this node, and want the default processing to pick which sub-node to dive deeper into
+ or can inject non-default behavior, which might incorporate:
+          traverseSynExpr(subExpr)   to recurse deeper on some particular sub-expression based on your own logic
+ path helps to track AST nodes that were passed during traversal
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase`1.VisitBinding(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.Ast.SynBinding,Microsoft.FSharp.Core.FSharpOption{`0}},Microsoft.FSharp.Compiler.Ast.SynBinding)">
+<summary>
+ VisitBinding allows overriding binding behavior (note: by default it would defaultTraverse expression)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.TraverseStep">
+<summary>
+ used to track route during traversal AST
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.Traverse``1(System.Int32,System.Int32,Microsoft.FSharp.Compiler.Ast.ParsedInput,Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal.AstVisitorBase{``0})">
+<summary>
+ traverse an implementation file walking all the way down to SynExpr or TypeAbbrev at a particular location
+
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.AstTraversal">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CompilerEnvironment.IsCheckerSupportedSubcategory(System.String)">
+<summary>
+ Return true if this is a subcategory of error or warning message that the language service can emit
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.CompilerEnvironment.GetCompilationDefinesForEditing(System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
+<summary>
+ Return the compilation defines that should be used when editing the given file.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.CompilerEnvironment.DefaultReferencesForOrphanSources">
+<summary>
+ These are the names of assemblies that should be referenced for .fs, .ml, .fsi, .mli files that
+ are not asscociated with a project.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.CompilerEnvironment">
+<summary>
+ Information about the compilation environment    
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.DebuggerEnvironment.GetLanguageID">
+<summary>
+ Return the language ID, which is the expression evaluator id that the
+ debugger will use.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.DebuggerEnvironment">
+<summary>
+ Information about the debugging environment
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Flags">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ItemDescriptionIcons">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.ItemDescriptionsImpl">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NavigationImpl">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.NoteworthyParamInfoLocationsImpl">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.PrettyNaming">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.WaitForBackgroundCompile">
+<summary>
+ Block until the current build is complete.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.SyncOp(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit})">
+<summary>
+ Block while performing and operation. Restart the most recent build afterward.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.StopBuilding">
+<summary>
+ Halt the current build.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.StartBuildingRecent">
+<summary>
+ Start building the most recently building thing.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.StartBuilding(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.Boolean})">
+<summary>
+ Start building. The build function will return true if there is more work to do.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.RunSyncOp``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
+<summary>
+ Block while performing and operation. Restart the most recent build afterward.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.RunAsyncOp``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
+<summary>
+ Start an operation and return an async handle to its result. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor.AsyncOp(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit})">
+<summary>
+ Start an operation and return immediately. Restart the most recent build after the operation is complete.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor">
+<summary>
+ Reactor operations
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Operation">
+<summary>
+ A synchronous or asynchronous operation to perform
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.BuildStepper">
+<summary>
+ Does one unit of work and returns true if there is more work to do.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor.Reactor">
+<summary>
+ Get the reactor for FSharp.Compiler.dll
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.Reactor">
+<summary>
+ Reactor is intended to long-running, but interruptible operations to be interleaved
+ with one-off synchronous or asynchronous operations. 
+
+ It is used to guard the global compiler state while maintaining  responsiveness on 
+ the UI thread.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.SourceFile.MustBeSingleFileProject(System.String)">
+<summary>
+ Whether or not this file should be a single-file project
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.SourceCodeServices.SourceFile.IsCompilable(System.String)">
+<summary>
+ Whether or not this file is compilable
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.SourceFile">
+<summary>
+ Information about F# source file names
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.SourceFileImpl">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TestExpose">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.TestHooks">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.UntypedParseInfoImpl">
+
+</member>
+</members>
+</doc>

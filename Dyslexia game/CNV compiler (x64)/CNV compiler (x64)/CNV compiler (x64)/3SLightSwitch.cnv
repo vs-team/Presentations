@@ -1,0 +1,39 @@
+﻿module LightSwitch
+
+open Casanova.Drawing
+open Casanova.Math
+open CasanovaTest
+open Casanova.Input
+
+world LightSwitch =
+  {  
+    Scene : Canvas
+    S : Sprite
+    P : bool
+    
+    rule P =
+        wait_until is_key_down(Keys.Space)
+        wait_until is_key_up(Keys.Space)
+        yield true
+        yield false
+
+    rule S.Color =
+        yield Color.Green
+        wait_until P
+        yield Color.Orange
+        wait_until P
+        yield Color.Red
+        wait_until P
+
+    Create(game : CasanovaGame<LightSwitch>) =
+      let scene = Canvas.Create(game.default_layer, Vector2<pixel>.Create(0.0f, 0.0f), Vector2<pixel>.Create(1000.0f, 1000.0f), StretchMode.Uniform)
+      {         
+          P = false
+          Scene       = scene
+          S = 
+            Sprite.Create(scene,Vector2<pixel>.Create(0.0f,0.0f),Vector2<pixel>.Create(100.0f), "circle.png")
+
+      }
+  }
+
+

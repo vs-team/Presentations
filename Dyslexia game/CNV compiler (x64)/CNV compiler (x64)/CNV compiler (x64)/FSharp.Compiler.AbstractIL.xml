@@ -1,0 +1,8548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FSharp.Compiler.AbstractIL</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Diagnostics">
+<summary>
+ Diagnostics from the AbsIL toolkit. You can reset the diagnostics 
+ stream to point elsewhere, or turn it
+ off altogether by setting it to &apos;None&apos;.  The logging channel initally
+ points to stderr.  All functions call flush() automatically.
+
+ REVIEW: review if we should just switch to System.Diagnostics
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudWhere">
+<summary>
+ Debug info for generated code for classunions 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudHasHelpers">
+<summary>
+ Generate the helpers? 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudHelpersAccess">
+<summary>
+ Are the representation helpers public? 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudReprAccess">
+<summary>
+ Is the representation public? 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxInstr">
+<summary>
+ ILX extensions to the intruction set
+
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxClosureApps">
+<summary>
+ IlxClosureApps - i.e. types being applied at a callsite
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionField.LowerName">
+<summary>
+ The name used for the field in parameter or IL field position
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types">
+<summary>
+ ILX extensions to Abstract IL types and instructions F# 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILEnumInfo">
+<summary>
+ Decompose a type definition according to its kind.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILLocalsAllocator">
+<summary>
+ Helpers for codegen: scopes for allocating new temporary variables.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals">
+<summary>
+ A table of common references to items in mscorlib. Version-neutral references 
+ can be generated using ecmaILGlobals.  If you have already loaded a particular 
+ version of mscorlib you should reference items via an ILGlobals for that particular 
+ version of mscorlib built using mkILGlobals. 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef.NativeResources">
+<summary>
+ e.g. win86 resources, as the exact contents of a .res or .obj file 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef">
+<summary>
+ One module in the &quot;current&quot; assembly, either a main-module or
+ an auxiliary module.  The main module will have a manifest.
+
+ An assembly is built by joining together a &quot;main&quot; module plus 
+ several auxiliary modules. 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.EntrypointElsewhere">
+<summary>
+ Records whether the entrypoint resides in another module. 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.ExportedTypes">
+<summary>
+ Records the types impemented by this asssembly in auxiliary 
+ modules. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.PublicKey">
+<summary>
+ This is the public key used to sign this 
+ assembly (the signature itself is stored elsewhere: see the 
+ binary format, and may not have been written if delay signing 
+ is used).  (member Name, member PublicKey) forms the full 
+ public name of the assembly.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.AuxModuleHashAlgorithm">
+<summary>
+ This is ID of the algorithm used for the hashes of auxiliary 
+ files in the assembly.   These hashes are stored in the 
+ ILModuleRef.Hash fields of this assembly. These are not cryptographic 
+ hashes: they are simple file hashes. The algorithm is normally 
+ 0x00008004 indicating the SHA1 hash algorithm.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest">
+<summary>
+ The main module of an assembly is a module plus some manifest information.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILResources">
+<summary>
+ Table of resources in a module
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILResource">
+<summary>
+ &quot;Manifest ILResources&quot; are chunks of resource data, being one of:
+   - the data section of the current module (byte[] of resource given directly) 
+  - in an external file in this assembly (offset given in the ILResourceLocation field) 
+   - as a resources in another assembly of the same name.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILExportedTypeOrForwarder.Name">
+<summary>
+ [Namespace.]Name
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILExportedTypeOrForwarder">
+<summary>
+ these are only found in the ILExportedTypesAndForwarders table in the manifest 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILNestedExportedType">
+<summary>
+ &quot;Classes Elsewhere&quot; - classes in auxiliary modules.
+
+ Manifests include declarations for all the classes in an 
+ assembly, regardless of which module they are in.
+
+ The &quot;.class extern&quot; construct describes so-called exported types -- 
+ these are public classes defined in the auxiliary modules of this assembly,
+ i.e. modules other than the manifest-carrying module. 
+ 
+ For example, if you have a two-module 
+ assembly (A.DLL and B.DLL), and the manifest resides in the A.DLL, 
+ then in the manifest all the public classes declared in B.DLL should
+ be defined as exported types, i.e., as &quot;.class extern&quot;. The public classes 
+ defined in A.DLL should not be defined as &quot;.class extern&quot; -- they are 
+ already available in the manifest-carrying module. The union of all 
+ public classes defined in the manifest-carrying module and all 
+ exported types defined there is the set of all classes exposed by 
+ this assembly. Thus, by analysing the metadata of the manifest-carrying 
+ module of an assembly, you can identify all the classes exposed by 
+ this assembly, and where to find them.
+
+ Nested classes found in external modules should also be located in 
+ this table, suitably nested inside another &quot;ILExportedTypeOrForwarder&quot;
+ definition.
+ these are only found in the &quot;Nested&quot; field of ILExportedTypeOrForwarder objects 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef.HasSecurity">
+<summary>
+ Note: some classes are marked &quot;HasSecurity&quot; even if there are no permissions attached, e.g. if they use SuppressUnmanagedCodeSecurityAttribute 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef.IsComInterop">
+<summary>
+ Class or interface generated for COM interop 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef">
+<summary>
+ Type Definitions 
+
+ As for methods there are several important constraints not encoded 
+ in the type definition below, for example that the super class of
+ an interface type is always None, or that enumerations always
+ have a very specific form.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs.AsListOfLazyTypeDefs">
+<summary>
+ Get some information about the type defs, but do not force the read of the type defs themselves
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs.FindByName(System.String)">
+<summary>
+ Calls to [FindByName] will result in any laziness in the overall 
+ set of ILTypeDefs being read in in addition 
+ to the details for the type found, but the remaining individual 
+ type definitions will not be read. 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs">
+<summary>
+ Tables of named type definitions.  The types and table may contain on-demand
+ (lazy) computations, e.g. the actual reading of some aspects
+ of a type definition may be delayed if the reader being used supports
+ this.
+
+ This is an abstract type equivalent to &quot;ILTypeDef list&quot; 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefKind">
+<summary>
+ A categorization of type definitions into &quot;kinds&quot;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefAccess">
+<summary>
+ Type Access
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILDefaultPInvokeEncoding">
+<summary>
+ Default Unicode encoding for P/Invoke  within a type
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeInit">
+<summary>
+ Indicate the initialization semantics of a type
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefLayout">
+<summary>
+ Type Layout information
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodImplDef">
+<summary>
+ Method Impls
+
+ If there is an entry (pms --&amp;gt; ms) in this table, then method [ms] 
+ is used to implement method [pms] for the purposes of this class 
+ and its subclasses. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILPropertyDefs">
+<summary>
+ Table of those properties in a type definition.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILPropertyDef">
+<summary>
+ Property definitions
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILEventDefs">
+<summary>
+ Table of those events in a type definition.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILEventDef">
+<summary>
+ Event definitions
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldDefs">
+<summary>
+ Tables of fields.  Logically equivalent to a list of fields but
+ the table is kept in a form optimized for looking up fields by 
+ name.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldDef.Offset">
+<summary>
+ The explicit offset in bytes when explicit layout is used.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldDef">
+<summary>
+ Field definitions
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDefs">
+<summary>
+ Tables of methods.  Logically equivalent to a list of methods but
+ the table is kept in a form optimized for looking up methods by 
+ name and arity.
+ abstract type equivalent to [ILMethodDef list] 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsMustRun">
+<summary>
+ .NET 2.0 feature: SafeHandle finalizer must be run 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsUnmanagedExport">
+<summary>
+ The method is exported to unmanaged code using COM interop.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.HasSecurity">
+<summary>
+ Note: some methods are marked &quot;HasSecurity&quot; even if there are no permissions attached, e.g. if they use SuppressUnmanagedCodeSecurityAttribute 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsVirtual">
+<summary>
+ instance methods that are virtual or abstract or implement an interface slot.  The predicates (IsClassInitializer,IsConstructor,IsStatic,IsNonVirtualInstance,IsVirtual) form a complete, non-overlapping classification of this type
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsStatic">
+<summary>
+ static methods.  The predicates (IsClassInitializer,IsConstructor,IsStatic,IsNonVirtualInstance,IsVirtual) form a complete, non-overlapping classification of this type
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsNonVirtualInstance">
+<summary>
+ instance methods that are not virtual.  The predicates (IsClassInitializer,IsConstructor,IsStatic,IsNonVirtualInstance,IsVirtual) form a complete, non-overlapping classification of this type
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsConstructor">
+<summary>
+ .ctor methods.  The predicates (IsClassInitializer,IsConstructor,IsStatic,IsNonVirtualInstance,IsVirtual) form a complete, non-overlapping classification of this type
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsClassInitializer">
+<summary>
+ .cctor methods.  The predicates (IsClassInitializer,IsConstructor,IsStatic,IsNonVirtualInstance,IsVirtual) form a complete, non-overlapping classification of this type
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef">
+<summary>
+ Method definitions.
+
+ There are several different flavours of methods (constructors,
+ abstract, virtual, static, instance, class constructors).  There
+ is no perfect factorization of these as the combinations are not
+ independent.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasDefaultConstructorConstraint">
+<summary>
+ Indicates the type argument must have a public nullary constructor 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasNotNullableValueTypeConstraint">
+<summary>
+ Indicates the type argument must be a value type, but not Nullable 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasReferenceTypeConstraint">
+<summary>
+ Indicates the type argument must be a reference type 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.Variance">
+<summary>
+ Variance of type parameters, only applicable to generic parameters for generic interfaces and delegates 
+</summary>
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.Constraints">
+<summary>
+ At most one is the parent type, the others are interface types 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef">
+<summary>
+ Generic parameters.  Formal generic parameter declarations
+ may include the bounds, if any, on the generic parameter.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILOverridesSpec">
+<summary>
+ [OverridesSpec] - refer to a method declaration in a superclass 
+ or superinterface. Used for overriding/method impls.  Includes
+ a type for the parent for the same reason that a method specs
+ includes the type of the enclosing type, i.e. the type
+ gives the &quot;ILGenericArgs&quot; at which the parent type is being used.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.PInvokeCallingConvention">
+<summary>
+ PInvoke attributes.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILPermissions">
+<summary>
+ Abstract type equivalent to ILPermission list - use helpers 
+ below to construct/destruct these 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILSecurityAction">
+<summary>
+ Security ILPermissions
+ 
+ Attached to various structures...
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILReturn">
+<summary>
+ Method return values
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILParameter.Marshal">
+<summary>
+ Marshalling map for parameters. COM Interop only. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILParameter">
+<summary>
+ Method parameters and return values
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttribute">
+<summary>
+ Custom attributes.  See &apos;decodeILAttribData&apos; for a helper to parse the byte[] 
+ to ILAttribElem&apos;s as best as possible.  
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttributeNamedArg">
+<summary>
+ Named args: values and flags indicating if they are fields or properties 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttribElem.String">
+<summary>
+ Represents a custom attribute parameter of type &apos;string&apos;. These may be null, in which case they are encoded in a special
+ way as indicated by Ecma-335 Partition II.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMemberAccess">
+<summary>
+ Member Access
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodBody.MaxStack">
+<summary>
+ strictly speakin should be a uint16 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodBody">
+<summary>
+ IL method bodies
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILLocal">
+<summary>
+ Local variables
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILNativeType">
+<summary>
+ Native Types, for marshalling to the native C interface.
+ These are taken directly from the ILASM syntax, see ECMA Spec (Partition II, 7.4).  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldInit">
+<summary>
+ Field Init
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILExceptionBlock">
+<summary>
+   The &apos;seh&apos; specification can have several forms:
+
+     FilterCatchBlock
+       A multi-try-filter-catch block.  Execute the
+       filters in order to determine which &apos;catch&apos; block to catch the
+       exception with. There are two kinds of filters - one for 
+       filtering exceptions by type and one by an instruction sequence. 
+       Note that filter blocks can&apos;t contain any exception blocks. 
+
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILCode">
+<summary>
+ ILCode
+ 
+ The code for a method is made up of a &quot;code&quot; object.  Each &quot;code&quot;
+ object gives the contents of the method in a &quot;semi-structured&quot; form, i.e.
+   1. The structure implicit in the IL exception handling tables
+      has been made explicit
+   2. No relative offsets are used in the code: all branches and
+      switch targets are made explicit as labels.
+   3. All &quot;fallthroughs&quot; from one basic block to the next have
+      been made explicit, by adding extra &quot;branch&quot; instructions to
+      the end of basic blocks which simply fallthrough to another basic
+      block.
+
+ You can convert a straight-line sequence of instructions to structured
+ code by using buildILCode and 
+ Most of the interesting code is contained in BasicBlocks. If you&apos;re
+ just interested in getting started with the format then begin
+ by simply considering methods which do not contain any branch 
+ instructions, or methods which do not contain any exception handling
+ constructs.
+
+ The above format has the great advantage that you can insert and 
+ delete new code blocks without needing to fixup relative offsets
+ or exception tables.  
+
+ ILBasicBlock(bblock)
+   See above
+
+ GroupBlock(localDebugInfo, blocks)
+   A set of blocks, with interior branching between the blocks.  For example
+       B1:  ldarg 1
+            br B2
+
+       B2:  pop
+            ret
+
+   will be two basic blocks
+       let b1 = ILBasicBlock(&quot;B1&quot;, [| I_ldarg(1); I_br(&quot;B2&quot;) |])
+       let b2 = ILBasicBlock(&quot;B2&quot;, [| I_arith(AI_pop); I_ret |])
+       GroupBlock([], [b1; b2])
+
+   A GroupBlock can include a list of debug info records for locally 
+   scoped local variables.  These indicate that within the given blocks
+   the given local variables are used for the given Debug info 
+   will only be recorded for local variables
+   declared in these nodes, and the local variable will only appear live 
+   in the debugger for the instructions covered by this node. So if you 
+   omit or erase these nodes then no debug info will be emitted for local 
+   variables.  If necessary you can have one outer ScopeBlock which specifies 
+   the information for all the local variables 
+  
+   Not all the destination labels used within a group of blocks need
+   be satisfied by that group alone.  For example, the interior &quot;try&quot; code
+   of &quot;try&quot;-&quot;catch&quot; construct may be:
+       B1:  ldarg 1
+            br B2
+
+       B2:  pop
+            leave B3
+
+   Again there will be two basic blocks grouped together:
+       let b1 = ILBasicBlock(&quot;B1&quot;, [| I_ldarg(1); I_br(&quot;B2&quot;) |])
+       let b2 = ILBasicBlock(&quot;B2&quot;, [| I_arith(AI_pop); I_leave(&quot;B3&quot;) |])
+       GroupBlock([], [b1; b2])
+   Here the code must be embedded in a method where &quot;B3&quot; is a label 
+   somewhere in the method.
+
+ RestrictBlock(labels,code) 
+   This block hides labels, i.e. the given set of labels represent
+   wiring which is purely (*internal*) to the given code block, and may not
+   be used as the target of a branch by any blocks which this block
+   is placed alongside.
+
+   For example, if a method is made up of:
+       B1:  ldarg 1
+            br B2
+
+       B2:  ret
+
+   then the label &quot;B2&quot; is internal.  The overall code will
+   be two basic blocks grouped together, surrounded by a RestrictBlock.
+   The label &quot;B1&quot; is then the only remaining visible entry to the method
+   and execution will begin at that label.
+
+       let b1 = ILBasicBlock(&quot;B1&quot;, [| I_ldarg(1); I_br(&quot;B2&quot;) |])
+       let b2 = ILBasicBlock(&quot;B2&quot;, [| I_arith(AI_pop); I_leave(&quot;B3&quot;) |])
+       let gb1 = GroupBlock([], [b1; b2])
+       RestrictBlock([&quot;B2&quot;], gb1)
+
+   RestrictBlock is necessary to build well-formed code.  
+
+ TryBlock(trycode,seh)
+
+   A try-catch, try-finally or try-fault block.  
+   If an exception is raised while executing
+   an instruction in &apos;trycode&apos; then the exception handler given by
+   &apos;seh&apos; is executed.
+
+ Well-formedness conditions for code:
+
+   Well-formed code includes nodes which explicitly &quot;hide&quot; interior labels.
+   For example, the code object for a method may have only one entry
+   label which is not hidden, and this label will be the label where 
+   execution begins.  
+
+   Both filter and catch blocks must have one 
+   and only one entry.  These entry labels are not visible 
+   outside the filter and catch blocks. Filter has no 
+   exits (it always uses endfilter), catch may have exits. 
+   The &quot;try&quot; block can have multiple entries, i.e. you can branch 
+   into a try from outside.  They can have multiple exits, each of 
+   which will be a &quot;leave&quot;.
+
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILDebugMapping">
+<summary>
+ Indicates that a particular local variable has a particular source 
+ language name within a GroupBlock. This does not effect local 
+ variable numbering, which is global over the whole method. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILBasicBlock">
+<summary>
+ A list of instructions ending in an unconditionally
+ branching instruction. A basic block has a label which must be unique
+ within the method it is located in.  Only the first instruction of
+ a basic block can be the target of a branch.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr">
+<summary>
+ The instruction set.                                                     
+
+ In general we don&apos;t categorize instructions, as different 
+ instruction groups are relevant for different types of operations. 
+ However we do collect the branch and compare instructions together 
+ because they all take an address, and the ILArithInstr ones because 
+ none of them take any direct arguments. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILCodeLabel">
+<summary>
+ ILCode labels.  In structured code each code label
+ refers to a basic block somewhere in the code of the method.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldSpec">
+<summary>
+ Field specs.  The data given for a ldfld, stfld etc. instruction.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodSpec">
+<summary>
+ The information at the callsite of a method
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldRef">
+<summary>
+ Formal identities of fields.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodRef">
+<summary>
+ Formal identities of methods.  Method refs refer to methods on 
+ named types.  In general you should work with ILMethodSpec objects
+ rather than MethodRef objects, because ILMethodSpec objects carry
+ information about how generic methods are instantiated.  MethodRef
+ objects are only used at a few places in the Abstract IL syntax
+ and if analyzing or generating IL you will be unlikely to come across
+ these.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericArgs">
+<summary>
+ Actual generic parameters are  always types.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Modified">
+<summary>
+ Custom modifiers. 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.TypeVar">
+<summary>
+ Reference a generic arg. 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.FunctionPointer">
+<summary>
+ ILCode pointers. 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Byref">
+<summary>
+ Managed pointers.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Ptr">
+<summary>
+ Unmanaged pointers.  Nb. the type is used by tools and for binding only, not by the verifier.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Boxed">
+<summary>
+ Reference types.  Also may be used for parents of members even if for members in value types. 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Value">
+<summary>
+ Unboxed types, including builtin types.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Array">
+<summary>
+ Array types 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.Void">
+<summary>
+ Used only in return and pointer types.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILType.TypeSpec">
+<summary>
+ True if modifier is &quot;required&quot; 
+ The class of the custom modifier. 
+ The type being modified. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeSpec.TypeRef">
+<summary>
+ Which type is being referred to?
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeSpec.GenericArgs">
+<summary>
+ The type instantiation if the type is generic, otherwise empty
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeSpec">
+<summary>
+ Type specs and types.  
+
+ These are the types that appear syntactically in .NET binaries.  
+
+ Generic type definitions must be combined with
+ an instantiation to form a type.  Throughout this file, 
+ a &quot;ref&quot; refers to something that is uninstantiated, and
+ a &quot;spec&quot; to a ref that is combined with the relevant instantiations.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef.Scope">
+<summary>
+ Where is the type, i.e. is it in this module, in another module in this assembly or in another assembly? 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef.Name">
+<summary>
+ The name of the type. This also contains the namespace if Enclosing is empty 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef.FullName">
+<summary>
+ The name of the type in the assembly using the &apos;.&apos; notation for nested types
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef.Enclosing">
+<summary>
+ The list of enclosing type names for a nested type. If non-nil then the first of these also contains the namespace.
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef.BasicQualifiedName">
+<summary>
+ The name of the type in the assembly using the &apos;+&apos; notation for nested types
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef.Create(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Collections.FSharpList{System.String},System.String)">
+<summary>
+ Create a ILTypeRef
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef">
+<summary>
+ Type refs, i.e. references to types in some .NET assembly
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILArrayShape.SingleDimensional">
+<summary>
+ Bounds for a single dimensional, zero based array 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILArrayBound">
+<summary>
+ Array shapes. For most purposes, including verification, the
+ rank is the only thing that matters.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILThisConvention.Static">
+<summary>
+ no &apos;this&apos; pointer is passed
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILThisConvention.InstanceExplicit">
+<summary>
+ accepts an explicit &apos;this&apos; pointer 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILThisConvention.Instance">
+<summary>
+ accepts an implicit &apos;this&apos; pointer 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef.Assembly">
+<summary>
+ A reference to a type in another assembly
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef.Module">
+<summary>
+ A reference to a type in a module in the same assembly
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef.Local">
+<summary>
+ A reference to the type in the current module
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyRef.Retargetable">
+<summary>
+ CLI says this indicates if the assembly can be retargeted (at runtime) to be from a different publisher. 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyRef.QualifiedName">
+<summary>
+ The fully qualified name of the assembly reference, e.g. mscorlib, Version=1.0.3705 etc.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.IlxExtensionInstr">
+<summary>
+ Represents an extension to the algebra of instructions
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.IlxExtensionTypeKind">
+<summary>
+ Represents an extension to the algebra of type kinds
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.IlxExtensionType">
+<summary>
+ Extensibility: ignore these unless you are generating ILX
+ structures directly.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILSourceDocument">
+<summary>
+ Debug info.  Values of type &quot;source&quot; can be attached at sequence 
+ points and some other locations. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILList`1">
+<summary>
+ The type used to store relatively small lists in the Abstract IL data structures, i.e. for ILTypes, ILGenericArgs, ILParameters and ILLocals.
+ See comments in il.fs for why we&apos;ve isolated this representation and the possible future choices we might use here.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.computeILRefs(Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef)">
+<summary>
+ Find the full set of assemblies referenced by a module 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.parseILVersion(System.String)">
+<summary>
+ Get a version number from a CLR version string, e.g. 1.0.3705.0
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.sha1HashBytes(System.Byte[])">
+<summary>
+ Get a public key token from a public key.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.isILObjectTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Discriminating different important built-in types
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkDebuggableAttribute(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,System.Boolean,System.Boolean)">
+<summary>
+ Some commonly used custom attibutes 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkInitializeArrayMethSpec(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals)">
+<summary>
+ Some commonly used methods 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ecmaILGlobals">
+<summary>
+ This is a &apos;vendor neutral&apos; collection of references to items in mscorlib. 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ecmaMscorlibScopeRef">
+<summary>
+ This is a &apos;vendor neutral&apos; way of referencing mscorlib. 
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ecmaPublicKey">
+<summary>
+ This is a &apos;vendor neutral&apos; way of referencing mscorlib. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.instILType(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Instantiate type variables that occur within types and other items. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.instILTypeAux(System.Int32,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Instantiate type variables that occur within types and other items. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.buildILCode(System.String,Microsoft.FSharp.Core.FSharpFunc{System.Int32,System.Int32},Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr[],Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILExceptionSpec},Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILLocalSpec})">
+<summary>
+ buildILCode: Build code from a sequence of instructions.
+ 
+ e.g. &quot;buildILCode meth resolver instrs exns locals&quot;
+ 
+ This makes the basic block structure of code from more primitive
+ information, i.e. an array of instructions.
+   [meth]: for debugging and should give the name of the method.
+   [resolver]: should return the instruction indexes referred to 
+               by code-label strings in the instruction stream.
+   [instrs]: the instructions themselves, perhaps with attributes giving 
+             debugging information
+   [exns]: the table of exception-handling specifications
+           for the method.  These are again given with respect to labels which will
+           be mapped to pc&apos;s by [resolver].  
+   [locals]: the table of specifications of when local variables are live and
+           should appear in the debug info.
+ 
+ If the input code is well-formed, the function will returns the 
+ chop up the instruction sequence into basic blocks as required for
+ the exception handlers and then return the tree-structured code
+ corresponding to the instruction stream.
+ A new set of code labels will be used throughout the resulting code.
+ 
+ The input can be badly formed in many ways: exception handlers might
+ overlap, or scopes of local variables may overlap badly with 
+ exception handlers.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.rescopeILFieldRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldRef)">
+<summary>
+ Rescoping. The first argument tells the function how to reference the original scope from 
+ the new scope. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.rescopeILMethodRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodRef)">
+<summary>
+ Rescoping. The first argument tells the function how to reference the original scope from 
+ the new scope. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.rescopeILType(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Rescoping. The first argument tells the function how to reference the original scope from 
+ the new scope. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.rescopeILTypeSpec(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeSpec)">
+<summary>
+ Rescoping. The first argument tells the function how to reference the original scope from 
+ the new scope. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.rescopeILScopeRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef)">
+<summary>
+ Rescoping. The first argument tells the function how to reference the original scope from 
+ the new scope. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkRefForNestedILTypeDef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef},Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef)">
+<summary>
+ Generate references to existing type definitions, method definitions
+ etc.  Useful for generating references, e.g. to a  class we&apos;re processing
+ Also used to reference type definitions that we&apos;ve generated.  [ILScopeRef] 
+ is normally ILScopeRef.Local, unless we&apos;ve generated the ILTypeDef in
+ an auxiliary module or are generating multiple assemblies at 
+ once.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILSimpleModule(System.String,System.String,System.Boolean,System.Tuple{System.Int32,System.Int32},System.Boolean,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs,Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.String},System.Int32,Microsoft.FSharp.Compiler.AbstractIL.IL.ILExportedTypesAndForwarders,System.String)">
+<summary>
+ Making modules
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILTypeDefsLazy(System.Lazy{Microsoft.FSharp.Collections.FSharpList{System.Tuple{Microsoft.FSharp.Collections.FSharpList{System.String},System.String,Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttributes,System.Lazy{Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef}}}})">
+<summary>
+ Create table of types which is loaded/computed on-demand, and whose individual 
+ elements are also loaded/computed on-demand. Any call to tdefs.AsList will 
+ result in the laziness being forced.  Operations can examine the
+ custom attributes and name of each type in order to decide whether
+ to proceed with examining the other details of the type.
+ 
+ Note that individual type definitions may contain further delays 
+ in their method, field and other tables. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILCustomAttrs(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttribute})">
+<summary>
+ Making tables of custom attributes, etc.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILTypeForGlobalFunctions(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef)">
+<summary>
+ The toplevel &quot;class&quot; for a module or assembly.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkCtorMethSpecForDelegate(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,System.Boolean)">
+<summary>
+ Given a delegate type definition which lies in a particular scope, 
+ make a reference to its constructor
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILStorageCtor(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.AbstractIL.IL.ILSourceMarker},Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType}},Microsoft.FSharp.Compiler.AbstractIL.IL.ILMemberAccess)">
+<summary>
+ Derived functions for making some simple constructors
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.prependInstrsToClassCtor(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.AbstractIL.IL.ILSourceMarker},Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef)">
+<summary>
+ Injecting initialization code into a class.
+ Add some code to the end of the .cctor for a type.  Create a .cctor
+ if one doesn&apos;t exist already.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.prependInstrsToCode(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr},Microsoft.FSharp.Compiler.AbstractIL.IL.ILCode)">
+<summary>
+ Injecting code into existing code blocks.  A branch will
+ be added from the given instructions to the (unique) entry of
+ the code, and the first instruction will be the new entry
+ of the method.  The instructions should be non-branching.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkRawDataValueTypeDef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,System.String,System.Int32,System.UInt16)">
+<summary>
+ Make a type definition for a value type used to point to raw data.
+ These are useful when generating array initialization code 
+ according to the 
+   ldtoken    field valuetype &apos;&lt;PrivateImplementationDetails&gt;&apos;/&apos;$$struct0x6000127-1&apos; &apos;&lt;PrivateImplementationDetails&gt;&apos;::&apos;$$method0x6000127-1&apos;
+   call       void System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class System.Array,valuetype System.RuntimeFieldHandle)
+ idiom.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILGenericClass(System.String,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefAccess,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDefs,Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldDefs,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs,Microsoft.FSharp.Compiler.AbstractIL.IL.ILPropertyDefs,Microsoft.FSharp.Compiler.AbstractIL.IL.ILEventDefs,Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttributes,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeInit)">
+<summary>
+ Make a type definition
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILInstanceField(System.String,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldInit},Microsoft.FSharp.Compiler.AbstractIL.IL.ILMemberAccess)">
+<summary>
+ Make field definitions
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILMethodBody(System.Boolean,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILLocal},System.Int32,Microsoft.FSharp.Compiler.AbstractIL.IL.ILCode,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.AbstractIL.IL.ILSourceMarker})">
+<summary>
+ Make method definitions
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILEmptyGenericParams">
+<summary>
+ Make a formal generic parameters
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILParam(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Derived functions for making return, parameter and local variable
+ objects for use in method definitions.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkNormalCall(Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodSpec)">
+<summary>
+ Derived functions for making some common patterns of instructions
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkBasicBlock(Microsoft.FSharp.Compiler.AbstractIL.IL.ILBasicBlock)">
+<summary>
+ Some more primitive helpers 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkNonBranchingInstrs(System.Int32,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr})">
+<summary>
+ Make a basic block. The final instruction must be control flow 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkNonBranchingInstrsThen(System.Int32,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr},Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr)">
+<summary>
+ Make some code that is a straight line sequence of instructions, then do 
+ some control flow.  The first code label is the entry label of the generated code. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.nonBranchingInstrsToCode(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILInstr})">
+<summary>
+ Make some code that is a straight line sequence of instructions. 
+ The function will add a &quot;return&quot; if the last instruction is not an exiting instruction 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.checkILCode(Microsoft.FSharp.Compiler.AbstractIL.IL.ILCode)">
+<summary>
+ Making code.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILCustomAttribMethRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodSpec,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttribElem},Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,System.Boolean,Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttribElem}})">
+<summary>
+ Make custom attributes 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILFormalBoxedTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef})">
+<summary>
+ Make generalized verions of possibly-generic types,
+ e.g. Given the ILTypeDef for List, return the type &quot;List&lt;T&gt;&quot;.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILFieldRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef,System.String,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Construct references to fields 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILCtorMethSpecForTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType})">
+<summary>
+ Construct references to constructors 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILNonGenericStaticMethSpecInTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,System.String,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Construct references to static, non-generic methods 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILStaticMethSpecInTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,System.String,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType})">
+<summary>
+ Construct references to static methods 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILNonGenericInstanceMethSpecInTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,System.String,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Construct references to instance methods 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILInstanceMethSpecInTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,System.String,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType})">
+<summary>
+ Construct references to instance methods 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILNonGenericMethSpecInTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILType,Microsoft.FSharp.Compiler.AbstractIL.IL.ILCallingConv,System.String,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Construct references to methods on a given type 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILMethRefRaw(Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILCallingConv,System.String,System.Int32,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Compiler.AbstractIL.IL.ILType},Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Make method references and specs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILTy(Microsoft.FSharp.Compiler.AbstractIL.IL.ILBoxity,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeSpec)">
+<summary>
+ Make types
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILNonGenericTySpec(Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef)">
+<summary>
+ Make type specs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILNestedTyRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Collections.FSharpList{System.String},System.String)">
+<summary>
+ Make type refs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkSimpleAssRef(System.String)">
+<summary>
+ Generate simple references to assemblies and modules
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.decodeILAttribData(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Compiler.AbstractIL.IL.ILAttribute,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef})">
+<summary>
+ Note: not all custom attribute data can be decoded without binding types.  In particular 
+ enums must be bound in order to discover the size of the underlying integer. 
+ The following assumes enums have size int32. 
+ It also does not completely decode System.Type attributes 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.destTypeDefsWithGlobalFunctionsFirst(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs)">
+<summary>
+ When writing a binary the fake &quot;toplevel&quot; type definition (called &lt;Module&gt;)
+ must come first. This function puts it first, and creates it in the returned list as an empty typedef if it 
+ doesn&apos;t already exist.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.mkILGlobals(Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Core.FSharpOption{System.String},System.Boolean)">
+<summary>
+ Build the table of commonly used references given a ILScopeRef for mscorlib. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.splitTypeNameRight(System.String)">
+<summary>
+ splitTypeNameRight is like splitILTypeName except the 
+ namespace is kept as a whole string, rather than split at dots.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.splitILTypeName(System.String)">
+<summary>
+ The splitILTypeName utility helps you split a string representing
+ a type name into the leading namespace elements (if any), the
+ names of any nested types and the type name itself.  This function
+ memoizes and interns the splitting of the namespace portion of
+ the type name. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.IL.resolveILMethodRef(Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodRef)">
+<summary>
+ Find the method definition corresponding to the given property or 
+ event operation. These are always in the same class as the property 
+ or event. This is useful especially if your code is not using the Ilbind 
+ API to bind references. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL.ILListModule">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.IL">
+<summary>
+ The &quot;unlinked&quot; view of .NET metadata and code.  Central to 
+  to Abstract IL library
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILAsciiWriter">
+<summary>
+ Printer for the abstract syntax.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader.OpenILModuleReaderFromBytes(System.String,System.Byte[],Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader.ILReaderOptions)">
+<summary>
+ Open a binary reader based on the given bytes. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader.OpenILModuleReaderAfterReadingAllBytes(System.String,Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader.ILReaderOptions)">
+<summary>
+ Open a binary reader, except first copy the entire contents of the binary into 
+ memory, close the file and ensure any subsequent reads happen from the in-memory store. 
+ PDB files may not be read with this option. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader">
+<summary>
+ Binary reader.  Read a .NET binary and concert it to Abstract IL data
+ structures.
+ 
+ Notes:
+   - The metadata in the loaded modules will be relative to 
+     those modules, e.g. ILScopeRef.Local will mean &quot;local to 
+     that module&quot;.  You must use [rescopeILType] etc. if you want to include 
+     (i.e. copy) the metadata into your own module. 
+
+   - PDB (debug info) reading/folding:
+     The PDB reader is invoked if you give a PDB path 
+     This indicates if you want to search for PDB files and have the 
+     reader fold them in.  You cannot currently name the pdb file 
+     directly - you can only name the path.  Giving &quot;None&quot; says 
+     &quot;do not read the PDB file even if one exists&quot; 
+ 
+     The debug info appears primarily as I_seqpoint annotations in 
+     the instruction streams.  Unfortunately the PDB information does
+     not, for example, tell you how to map back from a class definition
+     to a source code line number - you will need to explicitly search
+     for a sequence point in the code for one of the methods of the 
+     class.  That is not particularly satisfactory, and it may be
+     a good idea to build a small library which extracts the information
+     you need.  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILBinaryWriter.WriteILBinary(System.String,Microsoft.FSharp.Compiler.AbstractIL.ILBinaryWriter.options,Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef,System.Boolean)">
+<summary>
+ Write a binary to the file system. Extra configuration parameters can also be specified. 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILBinaryWriter">
+<summary>
+ The IL Binary writer 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emEnv">
+<summary>
+ The (local) emitter env (state). Some of these fields are effectively global accumulators
+ and could be placed as hash tables in the global environment.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.cenv">
+<summary>
+ The global environment
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emitInstrTail(System.Reflection.Emit.ILGenerator,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTailcall,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit})">
+<summary>
+ Emit the tail. prefix if necessary
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emitInstrAlign(System.Reflection.Emit.ILGenerator,Microsoft.FSharp.Compiler.AbstractIL.IL.ILAlignment)">
+<summary>
+ Emit the align. prefix
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emitInstrVolatile(System.Reflection.Emit.ILGenerator,Microsoft.FSharp.Compiler.AbstractIL.IL.ILVolatility)">
+<summary>
+ Emit the volatile. prefix
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emitInstrCompare(Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emEnv,System.Reflection.Emit.ILGenerator,Microsoft.FSharp.Compiler.AbstractIL.IL.ILComparisonInstr,System.Int32)">
+<summary>
+Emit comparison instructions
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.convCreatedType(Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.cenv,Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emEnv,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Uses the .CreateType() for emitted type (if available)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.convType(Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.cenv,Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.emEnv,Microsoft.FSharp.Compiler.AbstractIL.IL.ILType)">
+<summary>
+ Uses TypeBuilder/TypeBuilderInstantiation for emitted types
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.getTRefType(Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.cenv,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef)">
+<summary>
+ Convert an Abstract IL type reference to Reflection.Emit System.Type value
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter.Zmap">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.ILRuntimeWriter">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.ByteBuffer">
+<summary>
+ Imperative buffers and streams of byte[]
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Zmap`2">
+<summary>
+ Maps with a specific comparison function
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Zset`1">
+<summary>
+ Sets with a specific comparison function
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.AsciiConstants">
+<summary>
+ Various constants and utilities used when parsing the ILASM format for IL
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.BinaryConstants.TableNames">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.BinaryConstants">
+<summary>
+ (*internal*) use only.  Code and constants shared between binary reader/writer.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Internal.Bytes.blit(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+<summary>
+ each int will be 0 &lt;= x &lt;= 255 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Internal.Bytes.ofInt32Array(System.Int32[])">
+<summary>
+ each int must be 0 &lt;= x &lt;= 255 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Internal.Bytes.get(System.Byte[],System.Int32)">
+<summary>
+ returned int will be 0 &lt;= x &lt;= 255
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Bytes">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Support.PdbDocument">
+<summary>
+ PDB reader and associated types
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Support.PEFileType">
+<summary>
+ Unmanaged resource file linker - for native resources (not managed ones).
+ The function may be called twice, once with a zero-RVA and
+ arbitrary buffer, and once with the real buffer.  The size of the
+ required buffer is returned.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Internal.Support.getDebugFileName(System.String)">
+<summary>
+ Takes the output file name and returns debug file name.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.Support">
+<summary>
+ Functions associated with writing binaries which 
+ vary between supported implementations of the CLI Common Language 
+ Runtime, e.g. between the SSCLI, Mono and the Microsoft CLR.
+
+ The implementation of the functions can be found in ilsupp-*.fs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.ZmapModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Internal.ZsetModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Morphs.morphILTypeRefsInILModuleMemoized(Microsoft.FSharp.Compiler.AbstractIL.IL.ILGlobals,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef},Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef)">
+<summary>
+ Morph all type references throughout an entire module.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Morphs.morphILTypeDefsInILModule(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs},Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef)">
+<summary>
+ Morph all tables of ILTypeDefs in &quot;ILModuleDef&quot;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Morphs.morphILTypeDefs(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef},Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDefs)">
+<summary>
+ nb. does not do nested tdefs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.AbstractIL.Morphs.morphILScopeRefsInILTypeRef(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef,Microsoft.FSharp.Compiler.AbstractIL.IL.ILScopeRef},Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeRef)">
+<summary>
+ Morph each scope reference inside a type signature 
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.AbstractIL.Morphs">
+<summary>
+ A set of &quot;IL rewrites&quot; (&quot;morphs&quot;).  These map each sub-construct
+ of particular ILTypeDefs.  The morphing functions are passed
+ some details about the context in which the item being
+ morphed occurs, e.g. the module being morphed itself, the
+ ILTypeDef (possibly nested) where the item occurs, 
+ the ILMethodDef (if any) where the item occurs. etc.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.CompileThreadStatic">
+<summary>
+ Type holds thread-static globals for use by the compile
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.PhasedError.Subcategory">
+<summary>
+ This is the textual subcategory to display in error and warning messages (shows only under --vserrors):
+
+     file1.fs(72): subcategory warning FS0072: This is a warning message
+
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.PhasedError.IsSubcategoryOfCompile(System.String)">
+<summary>
+ Return true if the textual phase given is from the compile part of the build process.
+ This set needs to be equal to the set of subcategories that the language service can produce. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.PhasedError.IsPhaseInCompile">
+<summary>
+ Return true if this phase is one that&apos;s known to be part of the &apos;compile&apos;. This is the initial phase of the entire compilation that
+ the language service knows about.                
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.PhasedError.Create(System.Exception,Microsoft.FSharp.Compiler.ErrorLogger.BuildPhase)">
+<summary>
+ Construct a phased error
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.BuildPhase">
+<summary>
+ Closed enumeration of build phases.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.NormalizeErrorString(System.String)">
+<summary>
+ fixes given string by replacing all control chars with spaces.
+ NOTE: newlines are recognized and replaced with stringThatIsAProxyForANewlineInFlatErrors (ASCII 29, the &apos;group separator&apos;), 
+ which is decoded by the IDE with &apos;NewlineifyErrorString&apos; back into newlines, so that multi-line errors can be displayed in QuickInfo
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.Iterate2D``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Compiler.ErrorLogger.OperationResult{Microsoft.FSharp.Core.Unit}}},Microsoft.FSharp.Collections.FSharpList{``0},Microsoft.FSharp.Collections.FSharpList{``1})">
+<summary>
+ Stop on first error. Accumulate warnings and continue. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.IterateIdxD``1(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Compiler.ErrorLogger.OperationResult{Microsoft.FSharp.Core.Unit}}},Microsoft.FSharp.Collections.FSharpList{``0})">
+<summary>
+ Stop on first error. Report index 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.OptionD``1(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Compiler.ErrorLogger.OperationResult{Microsoft.FSharp.Core.Unit}},Microsoft.FSharp.Core.FSharpOption{``0})">
+<summary>
+ Stop on first error. Accumulate warnings and continue. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.IterateD``1(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Compiler.ErrorLogger.OperationResult{Microsoft.FSharp.Core.Unit}},Microsoft.FSharp.Collections.FSharpList{``0})">
+<summary>
+ Stop on first error. Accumulate warnings and continue. 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.op_PlusPlus``2(Microsoft.FSharp.Compiler.ErrorLogger.OperationResult{``0},Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Compiler.ErrorLogger.OperationResult{``1}})">
+<summary>
+ The bind in the monad. Stop on first error. Accumulate warnings and continue. 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.PushErrorLoggerPhaseUntilUnwind``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Compiler.ErrorLogger.ErrorLogger,``0})">
+<summary>
+ NOTE: The change will be undone when the returned &quot;unwind&quot; object disposes
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.ErrorLogger.PushThreadBuildPhaseUntilUnwind(Microsoft.FSharp.Compiler.ErrorLogger.BuildPhase)">
+<summary>
+ NOTE: The change will be undone when the returned &quot;unwind&quot; object disposes
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.ErrorLogger.uninitializedErrorLoggerFallback">
+<summary>
+ When no errorLogger is installed (on the thread) use this one.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.StopProcessing">
+<summary>
+ Thrown when we stop processing the F# Interactive interactive entry or #load.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.ReportedError">
+<summary>
+ Thrown when immediate, local error recovery is not possible. This indicates
+ we&apos;ve reported an error but need to make a non-local transfer of control.
+ Error recovery may catch this and continue (see &apos;errorRecovery&apos;)
+
+ The exception that caused the report is carried as data because in some
+ situations (LazyWithContext) we may need to re-report the original error
+ when a lazy thunk is re-evaluated.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.WrappedError">
+<summary>
+ Thrown when want to add some range information to some .NET exception
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.ErrorLoggerExtensions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger.BuildPhaseSubcategory">
+<summary>
+ Literal build phase subcategory strings.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.ErrorLogger">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Lib.debug">
+<summary>
+ is this the developer-debug build? 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.UnmanagedProcessExecutionOptions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Lib.AsyncUtil.AsyncResultCell`1.AsyncResult">
+<summary>
+ Get the result and commit it
+</summary>
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Lib.AsyncUtil.AsyncResultCell`1.AsyncPrimitiveResult">
+<summary>
+ Get the reified result
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.AsyncUtil.AsyncResultCell`1">
+<summary>
+ When using .NET 4.0 you can replace this type by Task&lt;&apos;T&gt;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.AsyncUtil.AsyncResult`1">
+<summary>
+ Represents the reified result of an asynchronous computation
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.AsyncUtil">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Zset">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Zmap">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.List">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.FlatListSet">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.ListSet">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Lib.ListAssoc.containsKey``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``0,System.Boolean}},``0,Microsoft.FSharp.Collections.FSharpList{System.Tuple{``0,``1}})">
+<summary>
+ Treat a list of key-value pairs as a lookup collection.
+ This function returns true if two keys are the same according to the predicate
+ function passed in.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Lib.ListAssoc.find``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,System.Boolean}},``0,Microsoft.FSharp.Collections.FSharpList{System.Tuple{``1,``2}})">
+<summary>
+ Treat a list of key-value pairs as a lookup collection.
+ This function looks up a value based on a match from the supplied
+ predicate function.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.ListAssoc">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.IntMap">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Lib.Check.StringArgumentNotNullOrEmpty(System.String,System.String)">
+<summary>
+ Throw System.ArgumentNullException() if string argument is null.
+ Throw System.ArgumentOutOfRangeException() is string argument is empty.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Lib.Check.ArrayArgumentNotNullOrEmpty``1(``0[],System.String)">
+<summary>
+ Throw System.ArgumentNullException() if array argument is null.
+ Throw System.ArgumentOutOfRangeException() is array argument is empty.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Lib.Check.ArgumentNotNull``1(``0,System.String)">
+<summary>
+ Throw System.ArgumentNullException() if argument is null.
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Lib.Check.NotNone``1(System.String,Microsoft.FSharp.Core.FSharpOption{``0})">
+<summary>
+ Throw System.InvalidOperationException() if argument is None.
+ If there is a value (e.g. Some(value)) then value is returned.
+</summary>
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Check">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.NameMapModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.NameSetModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Pair">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Int64">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Int32">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Bool">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Filename">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib.Bits">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Lib">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Range.range.IsSynthetic">
+<summary>
+ Synthetic marks ranges which are produced by intermediate compilation phases. This
+ bit signifies that the range covers something that should not be visible to language
+ service operations like dot-completion.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Range.pos.EncodingSize">
+<summary>
+ The maximum number of bits needed to store an encoded position 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Microsoft.FSharp.Compiler.Range.rangeOrder">
+<summary>
+ not a total order, but enough to sort on ranges 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Range.mkRange(System.String,Microsoft.FSharp.Compiler.Range.pos,Microsoft.FSharp.Compiler.Range.pos)">
+<summary>
+ This view hides the use of file indexes and just uses filenames 
+</summary>
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Range.mkFileIndexRange(System.Int32,Microsoft.FSharp.Compiler.Range.pos,Microsoft.FSharp.Compiler.Range.pos)">
+<summary>
+ This view of range marks uses file indexes explicitly 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Microsoft.FSharp.Compiler.Range.mkPos(System.Int32,System.Int32)">
+<summary>
+ Create a position for the given line and column
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Range.Range">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Range.Pos">
+
+</member>
+<member name="T:Microsoft.FSharp.Compiler.Range">
+
+</member>
+</members>
+</doc>

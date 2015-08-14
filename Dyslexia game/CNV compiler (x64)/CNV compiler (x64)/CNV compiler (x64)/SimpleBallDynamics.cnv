@@ -1,0 +1,31 @@
+﻿module SimpleBallDynamics
+
+open Casanova.Drawing
+open Casanova.Math
+open CasanovaTest
+open Casanova.Input
+
+world Ball =
+  {  
+    Scene : Canvas
+    S : Sprite
+    P : Vector2<m>
+    V : Vector2<m/s>
+    G : Vector2<m/s^2>
+
+    rule P = yield P + dt * V
+    rule V = yield V + dt * G
+    rule S.Position = yield P * 1.0f<pixel/m>
+
+    Create(game : CasanovaGame<Ball>) =
+      let scene = Canvas.Create(game.default_layer, Vector2<pixel>.Create(0.0f, 0.0f), Vector2<pixel>.Create(1000.0f, 1000.0f), StretchMode.Uniform)
+      {         
+          V = Vector2<m/s>.Create(0.0f, 0.0f)
+          P = Vector2<m>.Create(0.0f, -400.0f)
+          G = Vector2<m/s^2>.Create(0.0f,98.1f)
+          Scene       = scene
+          S = 
+            Sprite.Create(scene,Vector2<pixel>.Create(0.0f,-400.0f),Vector2<pixel>.Create(100.0f), "ball.png")
+
+      }
+  }

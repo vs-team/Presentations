@@ -1,0 +1,4409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>CasanovaFrontEnd</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynValInfo.SynValInfo">
+<summary>
+ SynValInfo(curriedArgInfos, returnInfo)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynValInfo">
+<summary>
+ The argument names and other metadata for a member or function
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.MemberKind.PropertyGetSet">
+<summary>
+ An artifical member kind used prior to the point where a get/set property is split into two distinct members.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.MemberKind">
+<summary>
+ Note the member kind is actually computed partially by a syntax tree transformation in tc.fs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.LongIdentWithDots.LongIdentWithDots">
+<summary>
+ LongIdentWithDots(lid, dotms)   
+ Typically dotms.Length = lid.Length-1, but they may be same if (incomplete) code ends in a dot, e.g. &quot;Foo.Bar.&quot;
+ The dots mostly matter for parsing, and are typically ignored by the typechecker, but 
+ if dotms.Length = lid.Length, then the parser must have reported an error, so the typechecker is allowed
+ more freedom about typechecking these expressions.
+ LongIdent can be empty list - it is used to denote that name of some AST element is absent (i.e. empty type name in inherit)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynMeasure">
+<summary>
+ The unchecked abstract syntax tree of F# unit of measure annotaitons. 
+ This should probably be merged with the represenation of SynType.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Measure">
+<summary>
+ Old comment: &quot;we never iterate, so the const here is not another SynConst.Measure&quot;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.String">
+<summary>
+ F# syntax: verbatim or regular string, e.g. &quot;abc&quot;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Char">
+<summary>
+ F# syntax: &apos;a&apos;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Double">
+<summary>
+ F# syntax: 1.30, 1.40e10 etc.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Single">
+<summary>
+ F# syntax: 1.30f, 1.40e10f etc.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Int32">
+<summary>
+ F# syntax: 13, 0x4000, 0o0777
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Byte">
+<summary>
+ F# syntax: 13uy, 0x40uy, 0oFFuy, 0b0111101uy
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Bool">
+<summary>
+ F# syntax: true, false
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst.Unit">
+<summary>
+ F# syntax: ()
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynConst">
+<summary>
+ The unchecked abstract syntax tree of constants in F# types and expressions.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynArgInfo">
+<summary>
+ The argument names and other metadata for a parameter for a member or function
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynReturnInfo">
+<summary>
+ The syntactic elements associated with the &quot;return&quot; of a function or method. Some of this is
+ mostly dummy information to make the return element look like an argument,
+ the important thing is that (a) you can give a return type for the function or method, and 
+ (b) you can associate .NET attributes to return of a function or method and these get stored in .NET metadata.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.StaticConstant">
+<summary>
+ F# syntax : 1, &quot;abc&quot; etc, used in parameters to type providers
+ For the dimensionless units i.e. 1 , and static parameters to provided types
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.MeasurePower">
+<summary>
+ F# syntax : for units of measure e.g. m^3 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.MeasureDivide">
+<summary>
+ F# syntax : for units of measure e.g. m / s 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.Anon">
+<summary>
+ F# syntax : _
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.Fun">
+<summary>
+ F# syntax : type -&gt; type
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.Array">
+<summary>
+ F# syntax : type[]
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.Tuple">
+<summary>
+ F# syntax : type * ... * type
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.App">
+<summary>
+ App(typeName, LESSm, typeArgs, commasm, GREATERm, isPostfix, m)
+
+ F# syntax : type&lt;type, ..., type&gt; or type type or (type,...,type) type
+   isPostfix: indicates a postfix type application e.g. &quot;int list&quot; or &quot;(int,string) dict&quot;
+   commasm: ranges for interstitial commas, these only matter for parsing/design-time tooling, the typechecker may munge/discard them
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynType.LongIdent">
+<summary>
+ F# syntax : A.B.C
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:CasanovaCompiler.AST.SynType.TryGetApp">
+<summary>
+ Get the syntactic range of source code covered by this construct.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynType">
+<summary>
+ The unchecked abstract syntax tree of F# types 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynField">
+<summary>
+ The untyped, unchecked syntax tree for a field declaration in a record or class
+ The bool value indicate whether the field is a reference typeor not
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynUnionCaseType.UnionCaseFullType">
+<summary>
+ Full type spec given by &apos;UnionCase : ty1 * tyN -&gt; rty&apos;. Only used in FSharp.Core, otherwise a warning.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynUnionCaseType.UnionCaseFields">
+<summary>
+ Normal style declaration 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynUnionCaseType">
+<summary>
+ The untyped, unchecked syntax tree for the right-hand-side of union definition, excluding members,
+ in either a signature or implementation.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynUnionCase.UnionCase">
+<summary>
+ The untyped, unchecked syntax tree for one case in a union definition.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.DiscardAfterMissingQualificationAfterDot">
+<summary>
+ Inserted for error recovery when there is &quot;expr.&quot; and missing tokens or error recovery after the dot
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.FromParseError">
+<summary>
+ Inserted for error recovery
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.ArbitraryAfterError">
+<summary>
+ Inserted for error recovery
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.YieldOrReturn">
+<summary>
+ F# syntax: yield expr 
+ F# syntax: return expr 
+ Computation expressions only
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.ImplicitZero">
+<summary>
+ F# syntax: &lt;implicit&gt;
+ Computation expressions only, implied by final &quot;do&quot; or &quot;do!&quot;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.JoinIn">
+<summary>
+ F# syntax: ... in ... 
+ Computation expressions only, based on JOIN_IN token from lex filter
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Null">
+<summary>
+ F# syntax: null
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.InferredUpcast">
+<summary>
+ F# syntax: upcast expr
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Upcast">
+<summary>
+ F# syntax: expr :&gt; type 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.DotIndexedGet">
+<summary>
+ F# syntax: expr.[expr,...,expr] 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.DotGet">
+<summary>
+ DotGet(expr, rangeOfDot, lid, wholeRange)
+
+ F# syntax: expr.ident.ident
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.LongIdent">
+<summary>
+ F# syntax: ident.ident...ident
+ LongIdent(isOptional, longIdent, altNameRefCell, m)
+   isOptional: true if preceded by a &apos;?&apos; for an optional named parameter 
+   altNameRefCell: Normally &apos;None&apos; except for some compiler-generated variables in desugaring pattern matching. See SynSimplePat.Id
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Ident">
+<summary>
+ F# syntax: ident
+ Optimized representation, = SynExpr.LongIdent(false,[id],id.idRange) 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.IfThenElse">
+<summary>
+  IfThenElse(exprGuard,exprThen,optionalExprElse,spIfToThen,isFromErrorRecovery,mIfToThen,mIfToEndOfLastBranch)
+
+ F# syntax: if expr then expr
+ F# syntax: if expr then expr else expr
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Sequential">
+<summary>
+ Seq(seqPoint, isTrueSeq, e1, e2, m)
+  isTrueSeq: false indicates &quot;let v = a in b; v&quot; 
+
+ F# syntax: expr; expr
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.LetOrUse">
+<summary>
+ LetOrUse(isRecursive, isUse, bindings, body, wholeRange)
+
+ F# syntax: let pat = expr in expr 
+ F# syntax: let f pat1 .. patN = expr in expr 
+ F# syntax: let rec f pat1 .. patN = expr in expr 
+ F# syntax: use pat = expr in expr 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.TypeApp">
+<summary>
+ TypeApp(expr, mLessThan, types, mCommas, mGreaterThan, mTypeArgs, mWholeExpr) 
+     &quot;mCommas&quot; are the ranges for interstitial commas, these only matter for parsing/design-time tooling, the typechecker may munge/discard them
+
+ F# syntax: expr&lt;type1,...,typeN&gt;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.App">
+<summary>
+ App(exprAtomicFlag, isInfix, funcExpr, argExpr, m)
+  - exprAtomicFlag: indicates if the applciation is syntactically atomic, e.g. f.[1] is atomic, but &apos;f x&apos; is not
+  - isInfix is true for the first app of an infix operator, e.g. 1+2 becomes App(App(+,1),2), where the inner node is marked isInfix 
+      (or more generally, for higher operator fixities, if App(x,y) is such that y comes before x in the source code, then the node is marked isInfix=true)
+
+ F# syntax: f x
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Do">
+<summary>
+ F# syntax: do expr 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Match">
+<summary>
+ F# syntax: match expr with pat1 -&gt; expr | ... | patN -&gt; exprN
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.CompExpr">
+<summary>
+ CompExpr(isArrayOrList, isNotNakedRefCell, expr)
+
+ F# syntax: { expr }
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.ArrayOrListOfSeqExpr">
+<summary>
+ F# syntax: [ expr ], [| expr |]
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.ForEach">
+<summary>
+ SynExpr.ForEach (spBind, seqExprOnly, isFromSource, pat, enumExpr, bodyExpr, mWholeExpr).
+
+ F# syntax: &apos;for ... in ... do ...&apos;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.For">
+<summary>
+ F# syntax: &apos;for i = ... to ... do ...&apos;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.While">
+<summary>
+ F# syntax: &apos;while ... do ...&apos;
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.New">
+<summary>
+ F# syntax: new C(...)
+ The flag is true if known to be &apos;family&apos; (&apos;protected&apos;) scope 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Record">
+<summary>
+ F# syntax: { f1=e1; ...; fn=en }
+ SynExpr.Record((baseType, baseCtorArgs, mBaseCtor, sepAfterBase, mInherits), (copyExpr, sepAfterCopyExpr), (recordFieldName, fieldValue, sepAfterField), mWholeExpr)
+ inherit includes location of separator (for tooling) 
+ copyOpt contains range of the following WITH part (for tooling)
+ every field includes range of separator after the field (for tooling)
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.ArrayOrList">
+<summary>
+ F# syntax: [ e1; ...; en ], [| e1; ...; en |]
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Tuple">
+<summary>
+ F# syntax: e1, ..., eN
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Typed">
+<summary>
+ F# syntax: expr : type
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Const">
+<summary>
+ F# syntax: 1, 1.3, () etc.
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynExpr.Paren">
+<summary>
+ F# syntax: (expr)
+
+ Paren(expr, leftParenRange, rightParenRange, wholeRangeIncludingParentheses)
+
+ Parenthesized expressions. Kept in AST to distinguish A.M((x,y)) 
+ from A.M(x,y), among other things.
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynExpr.RangeSansAnyExtraDot">
+<summary>
+ range ignoring any (parse error) extra trailing dots
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynExpr.RangeOfFirstPortion">
+<summary>
+ Attempt to get the range of the first token or initial portion only - this is extremely ad-hoc, just a cheap way to improve a certain &apos;query custom operation&apos; error range
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynExpr.Range">
+<summary>
+ Get the syntactic range of source code covered by this construct.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynSimplePatAlternativeIdInfo.Decided">
+<summary>
+ We have decided to use an alternative name in tha pattern and related expression 
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynSimplePatAlternativeIdInfo.Undecided">
+<summary>
+ We have not decided to use an alternative name in tha pattern and related expression 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:CasanovaCompiler.AST.ExprAtomicFlag.Atomic">
+<summary>
+ Says that the expression is an atomic expression, i.e. is of a form that has no whitespace unless 
+ enclosed in parantheses, e.g. 1, &quot;3&quot;, ident, ident.[expr] and (expr). If an atomic expression has
+ type T, then the largest expression ending at the same range as the atomic expression also has type T.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynPat.FromParseError">
+<summary>
+ A pattern arising from a parse error
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynPat.Null">
+<summary>
+ &apos;null&apos;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.LexerWhitespaceContinuation">
+<summary>
+ The parser defines a number of tokens for whitespace and
+ comments eliminated by the lexer.  These carry a specification of
+ a continuation for the lexer for continued processing after we&apos;ve dealt with
+ the whitespace.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.LexerEndlineContinuation">
+<summary>
+ Specifies how the &apos;endline&apos; function in the lexer should continue after
+ it reaches end of line or eof. The options are to continue with &apos;token&apos; function
+ or to continue with &apos;skip&apos; function.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="F:CasanovaCompiler.AST.SynAttribute.AppliesToGetterAndSetter">
+<summary>
+ Is this attribute being applied to a property getter or setter?
+</summary>
+</member>
+<member name="F:CasanovaCompiler.AST.SynAttribute.Target">
+<summary>
+ Target specifier, e.g. &quot;assembly&quot;,&quot;module&quot;,etc.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.|LongOrSingleIdent|_|(CasanovaCompiler.AST.SynExpr)">
+<summary>
+ Match a long identifier, including the case for single identifiers which gets a more optimized node in the syntax tree.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.rhs(Internal.Utilities.Text.Parsing.IParseState,System.Int32)">
+<summary>
+ Get the range corresponding to one of the r.h.s. symbols of a grammar rule while it is being reduced
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.rhs2(Internal.Utilities.Text.Parsing.IParseState,System.Int32,System.Int32)">
+<summary>
+ Get the range covering two of the r.h.s. symbols of a grammar rule while it is being reduced
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.lhs(Internal.Utilities.Text.Parsing.IParseState)">
+<summary>
+ Get the range corresponding to the result of a grammar rule while it is being reduced
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.mkSynRange(Internal.Utilities.Text.Lexing.Position,Internal.Utilities.Text.Lexing.Position)">
+<summary>
+ Get an F# compiler range from a lexer range
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.posOfLexPosition(Internal.Utilities.Text.Lexing.Position)">
+<summary>
+ Get an F# compiler position from a lexer position
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SyntaxError">
+<summary>
+ The error raised by the parse_error_rich function, which is called by the parser engine
+ when a syntax error occurs. The first object is the ParseErrorContext which contains a dump of
+ information about the grammar at the point where the error occured, e.g. what tokens
+ are valid to shift next at that point in the grammar. This information is processed in build.fs.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynInfo.SynSimplePat.Id">
+<summary>
+ Id (ident, altNameRefCell, isCompilerGenerated, isThisVar, isOptArg, range)
+
+ Indicates a simple pattern variable.
+
+   altNameRefCell 
+     Normally &apos;None&apos; except for some compiler-generated variables in desugaring pattern matching. 
+     Pattern processing sets this reference for hidden variable introduced by desugaring pattern matching in arguments.
+     The info indicates an alternative (compiler generated) identifier to be used because the name of the identifier is already bound.
+     See Product Studio FSharp 1.0, bug 6389.
+
+   isCompilerGenerated : true if a compiler generated name 
+   isThisVar: true if &apos;this&apos; variable in member  
+   isOptArg: true if a &apos;?&apos; is in front of the name
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.AST.SynInfo.SynSimplePats">
+<summary>
+ Represents a simple set of variable bindings a, (a,b) or (a:Type,b:Type) at a lambda,
+ function definition or other binding point, after the elimination of pattern matching
+ from the construct, e.g. after changing a &quot;function pat1 -&gt; rule1 | ...&quot; to a 
+ &quot;fun v -&gt; match v with ...&quot;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.InferLambdaArgs``2(``0)">
+<summary>
+ For &apos;let&apos; definitions, we infer syntactic argument information from the r.h.s. of a definition, if it
+ is an immediate &apos;fun ... -&gt; ...&apos; or &apos;function ...&apos; expression. This is noted in the F# language specification.
+ This does not apply to member definitions.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.InferSynArgInfoFromPat(CasanovaCompiler.AST.SynPat)">
+<summary>
+ Infer the syntactic argument info for one or more arguments a pattern.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.InferSynArgInfoFromSimplePats(CasanovaCompiler.AST.SynInfo.SynSimplePats)">
+<summary>
+ Infer the syntactic argument info for one or more arguments one or more simple patterns.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.SimplePatOfPat(CasanovaCompiler.AST.SynInfo.SynArgNameGenerator,CasanovaCompiler.AST.SynPat)">
+<summary>
+ Push non-simple parts of a patten match over onto the r.h.s. of a lambda.
+ Return a simple pattern and a function to build a match on the r.h.s. if the pattern is complex
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.InferSynArgInfoFromSimplePat(CasanovaCompiler.AST.SynInfo.SynSimplePat)">
+<summary>
+ Infer the syntactic argument info for a single argument from a simple pattern.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.AdjustMemberArgs``1(CasanovaCompiler.AST.MemberKind,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Collections.FSharpList{``0}})">
+<summary>
+ Transform a property declared using &apos;[static] member P = expr&apos; to a method taking a &quot;unit&quot; argument.
+ This is similar to IncorporateEmptyTupledArgForPropertyGetter, but applies to member definitions
+ rather than member signatures.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.AdjustArgsForUnitElimination(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Collections.FSharpList{CasanovaCompiler.AST.SynArgInfo}})">
+<summary>
+ Make sure only a solitary unit argument has unit elimination
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.AritiesOfArgs(CasanovaCompiler.AST.SynValInfo)">
+<summary>
+ Get the argument counts for each curried argument group. Used in some adhoc places in tc.fs.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.IncorporateSetterArg(CasanovaCompiler.AST.SynValInfo)">
+<summary>
+ Add a parameter entry to the syntactic value information to represent the value argument for a property setter. This is 
+ used for the implicit value argument in property setter signature specifications.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.IncorporateSelfArg(CasanovaCompiler.AST.SynValInfo)">
+<summary>
+ Add a parameter entry to the syntactic value information to represent the &apos;this&apos; argument. This is 
+ used for the implicit &apos;this&apos; argument in member signature specifications.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.IncorporateEmptyTupledArgForPropertyGetter(CasanovaCompiler.AST.SynValInfo)">
+<summary>
+ Add a parameter entry to the syntactic value information to represent the &apos;()&apos; argument to a property getter. This is 
+ used for the implicit &apos;()&apos; argument in property getter signature specifications.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.HasOptionalArgs(CasanovaCompiler.AST.SynValInfo)">
+<summary>
+ Check if there are any optional arguments in the syntactic argument information. Used when adjusting the
+ types of optional arguments for function and member signatures.
+</summary>
+</member>
+<member name="M:CasanovaCompiler.AST.SynInfo.IsOptionalArg(CasanovaCompiler.AST.SynArgInfo)">
+<summary>
+ Check if one particular argument is an optional argument. Used when adjusting the
+ types of optional arguments for function and member signatures.
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynInfo.selfMetadata">
+<summary>
+ The &apos;argument&apos; information for the &apos;this&apos;/&apos;self&apos; parameter in the cases where it is not given explicitly
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynInfo.unnamedRetVal">
+<summary>
+ The &apos;argument&apos; information for a return value where no attributes are given for the return value (the normal case)
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynInfo.unitArgData">
+<summary>
+ The argument information for a &apos;()&apos; argument
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynInfo.unnamedTopArg">
+<summary>
+ The argument information for a curried argument without a name
+</summary>
+</member>
+<member name="P:CasanovaCompiler.AST.SynInfo.unnamedTopArg1">
+<summary>
+ The argument information for an argument without a name
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST.SynInfo">
+<summary>
+ Operations related to the syntactic analysis of arguments of value, function and member definitions and signatures.
+
+ Function and member definitions have strongly syntactically constrained arities.  We infer
+ the arity from the syntax.
+
+ For example, we record the arity for: 
+ StaticProperty --&gt; [1]               -- for unit arg
+ this.InstanceProperty --&gt; [1;1]        -- for unit arg
+ StaticMethod(args) --&gt; map InferSynArgInfoFromSimplePat args
+ this.InstanceMethod() --&gt; 1 :: map InferSynArgInfoFromSimplePat args
+ this.InstanceProperty with get(argpat) --&gt; 1 :: [InferSynArgInfoFromSimplePat argpat]
+ StaticProperty with get(argpat) --&gt; [InferSynArgInfoFromSimplePat argpat]
+ this.InstanceProperty with get() --&gt; 1 :: [InferSynArgInfoFromSimplePat argpat]
+ StaticProperty with get() --&gt; [InferSynArgInfoFromSimplePat argpat]
+ 
+ this.InstanceProperty with set(argpat)(v) --&gt; 1 :: [InferSynArgInfoFromSimplePat argpat; 1]
+ StaticProperty with set(argpat)(v) --&gt; [InferSynArgInfoFromSimplePat argpat; 1]
+ this.InstanceProperty with set(v) --&gt; 1 :: [1]
+ StaticProperty with set(v) --&gt; [1]
+</summary>
+</member>
+<member name="T:CasanovaCompiler.AST">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:CasanovaCompiler.Compiler.Lexfilter.TokenTup.StartPos">
+<summary>
+ Returns starting position of the token
+</summary>
+</member>
+<member name="P:CasanovaCompiler.Compiler.Lexfilter.TokenTup.EndPos">
+<summary>
+ Returns end position of the token
+</summary>
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.TokenTup.UseShiftedLocation(CasanovaCompiler.Parser.token,System.Int32,System.Int32)">
+<summary>
+ Returns a token &apos;tok&apos; with the same position as this token, except that 
+ it is shifted by specified number of characters from the left and from the right
+ Note: positive value means shift to the right in both cases
+</summary>
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.TokenTup.UseLocation(CasanovaCompiler.Parser.token)">
+<summary>
+ Returns a token &apos;tok&apos; with the same position as this token
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexfilter.TokenTup">
+<summary>
+ Used to save the state related to a token
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexfilter.LexbufState">
+<summary>
+ Used to save some aspects of the lexbuffer state
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.isTryBlockContinuator(CasanovaCompiler.Parser.token)">
+<summary>
+ Determine the token that may align with the &apos;try&apos; of a &apos;try/catch&apos; or &apos;try/finally&apos; without closing
+ the construct
+</summary>
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.isIfBlockContinuator(CasanovaCompiler.Parser.token)">
+<summary>
+ Determine the tokens that may align with the &apos;if&apos; of an &apos;if/then/elif/else&apos; without closing
+ the construct
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.mkSynRange(Internal.Utilities.Text.Lexing.Position,Internal.Utilities.Text.Lexing.Position)">
+<summary>
+ Get an F# compiler range from a lexer range
+</summary>
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.posOfLexPosition(Internal.Utilities.Text.Lexing.Position)">
+<summary>
+ Get an F# compiler position from a lexer position
+</summary>
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexfilter.warningStringOfPos(Internal.Utilities.Text.Lexing.Position)">
+<summary>
+ Used for warning strings, which should display columns as 1-based and display 
+ the lines after taking &apos;# line&apos; directives into account (i.e. do not use
+ p.OriginalLine)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexfilter">
+<summary>
+ LexFilter - process the token stream prior to parsing.
+ Implements the offside rule and a copule of other lexical transformations.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexhelp.lexargs">
+<summary>
+ Lexer parameters 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexhelp.LexResourceManager">
+<summary>
+ Manage lexer resources (string interning)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexhelp.LightSyntaxStatus">
+<summary>
+ Lexer args: status of #light processing.  Mutated when a #light
+ directive is processed. This alters the behaviour of the lexfilter.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexhelp.stringBufferIsBytes(Microsoft.FSharp.Compiler.AbstractIL.Internal.ByteBuffer)">
+<summary>
+ Sanity check that high bytes are zeros. Further check each low byte &lt;= 127 
+</summary>
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexhelp.stringBufferAsBytes(Microsoft.FSharp.Compiler.AbstractIL.Internal.ByteBuffer)">
+<summary>
+ When lexing bytearrays we don&apos;t expect to see any unicode stuff. 
+ Likewise when lexing string constants we shouldn&apos;t see any trigraphs &gt; 127 
+ So to turn the bytes collected in the string buffer back into a bytearray 
+ we just take every second byte we stored.  Note all bytes &gt; 127 should have been 
+ stored using addIntChar 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexhelp.usingLexbufForParsing``1(Internal.Utilities.Text.Lexing.LexBuffer{System.Char},System.String,Microsoft.FSharp.Core.FSharpFunc{Internal.Utilities.Text.Lexing.LexBuffer{System.Char},``0})">
+<summary>
+ Reset the lexbuf, configure the initial position with the given filename and call the given function
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexhelp.reusingLexbufForParsing``1(Internal.Utilities.Text.Lexing.LexBuffer{System.Char},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
+<summary>
+ Register the lexbuf and call the given function
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Compiler.Lexhelp.Keywords.QuoteIdentifierIfNeeded(System.String)">
+<summary>
+ A utility to help determine if an identifier needs to be quoted 
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:CasanovaCompiler.Compiler.Lexhelp.Keywords.permitFsharpKeywords">
+<summary>
+ ++GLOBAL MUTABLE STATE. Note this is a deprecated, undocumented command line option anyway, we can ignore it.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexhelp.Keywords">
+
+</member>
+<member name="T:CasanovaCompiler.Compiler.Lexhelp">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Lexer">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:CasanovaCompiler.Parser.prodIdxToNonTerminal(System.Int32)">
+<summary>
+ This function maps production indexes returned in syntax errors to strings representing the non terminal that would be produced by that production
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaCompiler.Parser">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:CasanovaFrontEnd.Program">
+
+</member>
+</members>
+</doc>

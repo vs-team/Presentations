@@ -1,0 +1,588 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+\usepackage{nhtvslides}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{listings}
+\lstset{language=CAML,
+basicstyle=\ttfamily\footnotesize,
+frame=none,
+breaklines=true}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\title{Casanova 2.0}
+\subtitle{A checkpoint-based RTS}
+
+\author{Dr. Giuseppe Maggiore \and Dino Dini}
+
+\institute{NHTV University of Applied Sciences \\ 
+Breda, Netherlands}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Agenda}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{slide}{Introduction}{Our goal}{
+\item Build an RTS
+\item Graphics in Unity (BTW: programmer's art)
+\item Core mechanics (no bonuses, upgrades, etc.)
+}\end{slide}
+
+\begin{slide}{Introduction}{RTS}{
+\item A graph of nodes
+\item Nodes grouped into areas
+\item Only links can be traversed by units
+\item Only enable/disable automated sending along a link
+\item No direct control over units, just ``open/close the faucet''
+}\end{slide}
+
+
+\section{World}
+\begin{frame}[fragile]{World}
+\begin{lstlisting}[frame=shadowbox]
+worldEntity World =
+  {
+    CurrentSelection      : CurrentSelection
+    StarSystems           : [StarSystem]
+    Links                 : [Link]
+    Players               : [Player]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{World}
+\begin{lstlisting}[frame=shadowbox]
+    Create(initialPlayers : [string*Color],unityMap:UnityMap) =
+      let players =
+        [ for name, color in initialPlayers do
+          select (Player.Create(name, color)) ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{World}
+\begin{lstlisting}[frame=shadowbox]
+      let star_systems = 
+        [ for star_system in unityMap.StarSystems do
+          select (StarSystem.Create(current_selection, star_system, players)) ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{World}
+\begin{lstlisting}[frame=shadowbox]
+      let all_checkpoints = 
+        [ for star_system in star_systems do
+          selectMany star_system.Checkpoints ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{World}
+\begin{lstlisting}[frame=shadowbox]
+      let links = 
+        [ for link in unityMap.Links do
+          let beginning = 
+            [ for checkpoint in all_checkpoints do
+              findBy (checkpoint.UnityCheckpoint.gameObject = link.BeginningGameObject) ]
+          let ending = 
+            [ for checkpoint in all_checkpoints do
+              findBy (checkpoint.UnityCheckpoint.gameObject = link.EndGameObject) ]
+          select (Link.Create(link, beginning, ending)) ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{World}
+\begin{lstlisting}[frame=shadowbox]
+      {
+        CurrentSelection      = CurrentSelection.Create()
+        StarSystems           = star_systems
+        Links                 = links
+        Players               = players
+      }
+\end{lstlisting}
+\end{frame}
+
+
+\section{Current selection}
+\begin{frame}[fragile]{Selection}
+\begin{lstlisting}[frame=shadowbox]
+entity CurrentSelection =
+  {
+    SelectionRectangle       : Option<UnitySelectionRectangle>
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Selection}
+\begin{lstlisting}[frame=shadowbox]
+    Create() =
+      {
+        SelectionRectangle    = None
+        SelectedDestination   = None
+        SelectedSources       = []
+      }
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Selection}
+\begin{lstlisting}[frame=shadowbox]
+    rule SelectionRectangle = 
+      when SelectionRectangle = None && Input.GetMouseButton(0)
+      yield Some(UnitySelectionRectangle.Create())
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Selection}
+\begin{lstlisting}[frame=shadowbox]
+    rule SelectionRectangle.Value.Destroyed,SelectionRectangle.Value.EnableSelection = 
+      when SelectionRectangle <> None && not(Input.GetMouseButton(0))
+      yield false,true
+      yield true,false
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Selection}
+\begin{lstlisting}[frame=shadowbox]
+    rule SelectionRectangle = 
+      when SelectionRectangle <> None && SelectionRectangle.Value.Destroyed
+      yield None
+\end{lstlisting}
+\end{frame}
+
+
+\section{Player}
+\begin{frame}[fragile]{Player}
+\begin{lstlisting}[frame=shadowbox]
+entity Player = 
+  {
+    Name            : string
+    Color           : Color
+    UnityPlayer     : UnityPlayer
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Player}
+\begin{lstlisting}[frame=shadowbox]
+    Create(name, color, camera:UnityCamera) =
+      {
+        Name            = name
+        Color           = color
+        UnityPlayer     = UnityPlayer.Create(name, color)
+      }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Player}
+\begin{lstlisting}[frame=shadowbox]
+    rule UnityPlayer.NumArmies =
+      yield 
+        [ for star_system in world.StarSystems do
+          for checkpoint in star_system.Checkpoints do
+          where (checkpoint.Owner = this)
+          sumBy (checkpoint.LocalFleet.NumShips) ]
+      wait 1.0f<s>
+\end{lstlisting}
+\end{frame}
+
+
+\section{StarSystem}
+\begin{frame}[fragile]{StarSystem}
+\begin{lstlisting}[frame=shadowbox]
+entity StarSystem = 
+  {
+    Checkpoints                 : [Checkpoint]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{StarSystem}
+\begin{lstlisting}[frame=shadowbox]
+    Create(star_system:UnityStarSystem) = 
+      {
+        Checkpoints = 
+          [ for checkpoint in star_system.Checkpoints do
+            select (Checkpoint.Create(checkpoint)) ]
+      }
+  }
+\end{lstlisting}
+\end{frame}
+
+
+\section{Checkpoint}
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+entity Checkpoint =
+  {
+    UnityCheckpoint           : UnityCheckpoint
+    ref Owner                 : Option<Player>
+    LocalFleet                : Fleet
+    Attackers                 : [AttackingFleet]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    Create(unity_checkpoint) =
+      {
+        UnityCheckpoint        = unity_checkpoint
+        Owner                  = unity_checkpoint.InitialOwner
+        LocalFleet             = Fleet.Create( 0)
+        Attackers              = []
+      }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    rule UnityCheckpoint.OwnerColor =
+      when Owner <> None
+      yield Owner.Value.Color
+
+    rule UnityCheckpoint.NumShips =
+      when Ownership.Owner <> None
+      yield LocalFleet.NumShips.ToString()
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    rule UnityCheckpoint.IsTarget =
+      when UnityCheckpoint.IsTarget
+      yield true
+      wait 0.1f<s>
+      yield false
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    rule UnityCheckpoint.Attackers =
+      when Attackers <> []
+      yield 
+        [ for attacker in Attackers do
+          groupBy attacker.Owner into attackGroup
+          let owner = attack_group.Key
+          let numShips = 
+            [ for fleet in attackGroup.Elements do 
+              sumBy attackGroup.NumShips ]
+          select UnityText.Create(numShips, owner.Color) ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    rule LocalFleet.NumShips, Attackers =
+      when Attackers <> []
+      let num_attackers = Attackers.Length
+      wait 0.1f<s>
+      yield LocalFleet.NumShips - num_attackers,
+            [ for a in Attackers do
+              select { a with Fleet.NumShips = a.Fleet.NumShips - 1 } ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    rule Attackers =
+      [ for a in Attackers do
+        where (a.Fleet.NumShips > 0)
+        select a ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Checkpoint}
+\begin{lstlisting}[frame=shadowbox]
+    rule LocalFleet, Owner, Attackers =
+      when LocalFleet.NumShips <= 0 && Attackers <> []
+      let newOwnersAttackers = 
+            [ for a in Attackers do
+              where (a.Owner = Attackers.Head.Owner)
+              select a ]
+      let newLocalFleet = 
+            [ for a in newOwnersAttackers do
+              sumBy a.Fleet.NumShips ]
+      yield Fleet.Create(newLocalFleet), 
+            Some Attackers.Head.Owner, 
+            Attackers - newOwnersAttackers
+\end{lstlisting}
+\end{frame}
+
+
+\section{Link}
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+entity Link = 
+  {
+    ref UnityLink       : UnityLink
+    ref Start           : Checkpoint
+    ref End             : Checkpoint
+    Fleets              : [TravelingFleet]
+    ArrivedFleets       : [TravelingFleet]
+    AutoSendEnabled     : bool
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    Create(link:UnityLink,s,e,link_bonuses) =
+      {
+        UnityLink       = link
+        Start           = s
+        End             = e
+        Fleets          = []
+        ArrivedFleets   = []
+        AutoSendEnabled = false
+      }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    rule AutoSendEnabled =
+      when Start.UnityCheckpoint.IsSource && End.UnityCheckpoint.IsTarget
+      yield not AutoSendEnabled
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    rule Fleets,Start.LocalFleet.NumShips =
+      when AutoSendEnabled && Start.LocalFleet.NumShips >= 0 && 
+           Start.Owner <> None
+      let sent_fleets = Start.LocalFleet.NumShips / 5
+      let new_fleet = 
+      	TravelingFleet.Create(
+      	  Start.UnityCheckpoint.Position,End,
+      	  sent_fleets,Start.Owner.Value)
+      yield new_fleet :: Fleets, Start.LocalFleet.NumShips - sent_fleets
+      wait 1.0f<s>
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    rule ArrivedFleets =  
+      [ for f in Fleets do
+        where f.UnityShip.Destroyed
+        select f ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    rule Fleets = Fleets - ArrivedFleets
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    rule End.LocalFleet.NumShips =
+      let arrived_fleets =
+        [ for f in ArrivedFleets do
+          where (Some f.Owner = End.Ownership.Owner)
+          select f.Fleet.NumShips
+          sum ]
+      End.LocalFleet.NumShips + arrived_fleets
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Link}
+\begin{lstlisting}[frame=shadowbox]
+    rule End.Attackers =
+      End.Attackers @
+        [ for f in ArrivedFleets do
+          where (Some f.Owner <> End.Owner)
+          select (AttackingFleet.Create(f.Fleet.NumShips,f.Owner)) ]
+\end{lstlisting}
+\end{frame}
+
+
+\section{Fleet}
+\begin{frame}[fragile]{Fleet}
+\begin{lstlisting}[frame=shadowbox]
+entity Fleet = 
+  {
+    NumShips    : int
+    Create(num_ships) = 
+      {
+        NumShips = num_ships
+      }      
+  }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Fleet}
+\begin{lstlisting}[frame=shadowbox]
+entity AttackingFleet =
+  {
+    Fleet     : Fleet
+    Owner     : Player
+
+    Create(num_ships,owner) = 
+      {
+        Fleet     = Fleet.Create(num_ships)
+        Owner     = owner
+      }
+  }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Fleet}
+\begin{lstlisting}[frame=shadowbox]
+entity TravelingFleet =
+  {
+    UnityShip         : UnityShip
+    Fleet             : Fleet
+    Owner             : Player
+    ref Target        : Checkpoint
+    ref LinkBonuses   : LinkBonuses
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Fleet}
+\begin{lstlisting}[frame=shadowbox]
+    Create(position,target:Checkpoint,num_ships,owner) = 
+      let Unity_ship = UnityShip.Create(position,owner.Color)
+      {
+        UnityShip     = Unity_ship
+        Fleet         = Fleet.Create(num_ships)
+        Owner         = owner
+        Target        = target
+      }
+  }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Fleet}
+\begin{lstlisting}[frame=shadowbox]
+    rule UnityShip.Velocity = 
+      Vector3.Normalize(Target.UnityCheckpoint.Position - UnityShip.Position)
+
+    rule UnityShip.Destroyed = 
+      Vector3.Distance(UnityShip.Position, Target.UnityCheckpoint.Position) <= Target.UnityCheckpoint.Radius + UnityShip.Radius
+\end{lstlisting}
+\end{frame}
+
+
+\section{Pathfinding}
+\begin{frame}[fragile]{Pathfinding}
+\begin{lstlisting}[frame=shadowbox]
+entity PathContext =
+  {
+    Distance    : float32
+    ref Steps   : [Link]
+    Create(dist,steps) =
+      {
+        Distance = dist
+        Steps = steps
+      }
+  }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Pathfinding}
+\begin{lstlisting}[frame=shadowbox]
+entity Pathfinding =
+  {
+    ref MinimumPaths : [Checkpoint -> [Checkpoint -> PathContext]]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Pathfinding}
+\begin{lstlisting}[frame=shadowbox]
+    Create(all_checkpoints : [Checkpoint],links : [DirectedLink]) =
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Pathfinding}
+\begin{lstlisting}[frame=shadowbox]
+      let neighbors =
+        [ for c in all_checkpoints do
+          select(c,[ for l in links do
+                     where (l.Start = c && l.End <> c)
+                     select l ])
+          toMap ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Pathfinding}
+\begin{lstlisting}[frame=shadowbox]
+      let minimumPaths =
+        [ for checkpoint in all_checkpoints do
+          select (checkpoint,
+                  [ for (k,c) in [checkpoint,PathContext.Create(0.0f,[])] do
+                    closeOver [ for neighbor in neighbors.[k] do
+                                let dist' = c.Distance + neighbor.UnityLink.Length
+                                let steps' = neighbor :: c.Steps
+                                select (neighbor.End,PathContext.Create(dist',steps')) ]
+                    minimizeBy c.Distance
+                    evalClosure ])
+          toMap ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Pathfinding}
+\begin{lstlisting}[frame=shadowbox]
+      {
+        MinimumPaths = minimumPaths
+      }
+\end{lstlisting}
+\end{frame}
+
+\section{Conclusion}
+\begin{slide}{Conclusion}{What did we just see?}{
+\item A simple, yet full, RTS
+\item Graphics in Unity; graphics is a bit of a solved problem
+\item Core mechanics (no bonuses, upgrades, etc.)
+\item Advanced mechanics are not that much more (pathfinding)
+}\end{slide}
+
+\begin{slide}{Conclusion}{Why?}{
+\item Stress-test of Casanova
+\item Stress-test of integration with Unity
+}\end{slide}
+
+\begin{slide}{Conclusion}{Why?}{
+\item Stress-test of Casanova: works perfectly
+\item Stress-test of integration with Unity: works well, but still improving
+}\end{slide}
+
+\begin{slide}{Conclusion}{Things that work}{
+\item Most state machines/queries would turn into a nightmare
+\item Virtually no debugging happened during development (yup, it is not a joke)
+\item (Extended version of the game took exactly 7 days to make)
+\item System works, we even have a starter kit example
+}\end{slide}
+
+\begin{slide}{Conclusion}{Things that could work better}{
+\item Optimization of queries and events
+\item Automated binding of entities and scene
+\item Automated compilation of Casanova files that change
+}\end{slide}
+
+\begin{slide}{Conclusion}{A look ahead}{
+\item Very aggressive forms of optimization
+\item Networking primitives
+\item More testing and sample games
+}\end{slide}
+
+\begin{frame}{That's it}
+\center
+\fontsize{18pt}{7.2}\selectfont
+Thank you!
+\end{frame}
+
+\end{document}
+
+
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\end{frame}

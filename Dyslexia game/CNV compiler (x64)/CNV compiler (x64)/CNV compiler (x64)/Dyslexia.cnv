@@ -1,0 +1,535 @@
+﻿module DyslexiaDetector
+
+open Casanova.Drawing
+open CasanovaTest
+open Casanova.Input
+open Casanova.Audio
+open System.IO
+open Casanova.Math
+open Casanova.Math.MathHelper
+open Casanova.Utilities
+open DyslexiaLib
+
+world DyslexiaDetector =
+  {
+    Game                    : CasanovaGame<DyslexiaDetector>  
+    TaskIndex               : int  
+    Layers                  : ParallaxBackground 
+    Tasks                   : Task query
+    ParsedTasks             : List<int * string * int * bool>    
+    Answer                  : Button
+    Fox                     : Fox 
+    ref Bird                : Bird
+    ref ActiveSong          : Song
+    Playing                 : bool
+    Report                  : FileWriter
+
+    
+    rule Tasks =
+      let q =
+        from (index,song_name,answer,is_tutorial) <- ParsedTasks
+         where true
+         select Task.Create(index,song_name,answer,Layers.ForegroundCanvas,Game.Content,is_tutorial)
+      yield q
+      wait_until false
+
+    
+
+
+    rule Layers.RotationVelocity,Layers.RotationAngle,Answer.TutorialAnswer, Bird, Bird.Moving, Bird.Singing, Bird.Destination, Fox.Moving, Fox.Singing, ActiveSong, TaskIndex, Report.WriteLine, ActiveSong.Playing,Bird.SpriteScale,Game.Quit,Answer.YesPressed,Answer.NoPressed,Answer.CorrectAnswer,Answer.PlayTutorial =     
+        wait_until Tasks.Length > 0
+
+        //create the column titles in the report
+        yield Report.WriteLine <- "Task Number,Result,Answer time"
+
+        for t in Tasks do
+            //World starts rotating, fox is walking
+            let start_angle = Layers.RotationAngle
+            yield
+                  Bird <- t.Bird
+                  ActiveSong <- t.Song
+                  Layers.RotationVelocity <- -1.0f<rad/s>
+                  Fox.Moving <- true
+            let target_rotation_angle = (float32 TaskIndex) * (two_pi/ 11.0f) * -1.0f
+            //printfn "Angle: %f | Target: %f" (Layers.RotationAngle * 1.0f<1/rad>) (target_rotation_angle * 1.0f<1/rad>)
+            //printfn "Task index: %d\n" TaskIndex
+            wait_until (Layers.RotationAngle + Layers.RotationVelocity * dt <= target_rotation_angle)
+            //bird starts flying, fox stops
+            yield 
+                Layers.RotationVelocity <- 0.0f<rad/s>
+                Layers.RotationAngle <- target_rotation_angle
+                Bird.Moving <- true
+                Fox.Moving <- false
+            wait 0.1f<s>
+            //printfn "Bird Dest: %f,%f | Scale : %f,%f | Position : %f,%f | Velocity: %f,%f\n" (Bird.Destination.X * 1.0f<1/pixel>) (Bird.Destination.Y * 1.0f<1/pixel>) (Bird.SpriteScale.X) (Bird.SpriteScale.Y) (Bird.Position.X * 1.0f<1/pixel>) (Bird.Position.Y * 1.0f<1/pixel>) (Bird.Velocity.X * 1.0f<s/pixel>) (Bird.Velocity.Y * 1.0f<s/pixel>)
+            //System.Console.WriteLine(string ParsedTasks)
+            
+            //wait until the bird is in position
+            wait_until (Bird.Velocity.Length = 0.0f<pixel/s>)
+            
+            //bird is on the branch, changes its state and starts singing
+            yield
+                Bird.Moving <- false
+                Fox.Singing <- true
+                ActiveSong.Playing <- true
+            wait 1.5f<s>
+            yield
+                Bird.Singing <- true
+                Fox.Singing <- false
+            wait 1.5f<s>
+            yield Bird.Singing <- false
+
+            //wait for the user to answer
+            let start_time = System.DateTime.Now
+            wait_until (Answer.YesPressed || Answer.NoPressed || t.IsTutorial)
+            let user_answer =
+                if Answer.YesPressed then 
+                    1
+                else
+                    0
+            let end_time = System.DateTime.Now
+            let elapsed_time = end_time - start_time
+            let elapsed_time = string elapsed_time
+
+            //bird flies away
+            yield
+                Bird.Destination <- Vector2<pixel>.Create(-627.0f,-625.0f)
+                Bird.Moving <- true
+
+
+            let report_answer =
+                if (user_answer = 1 && t.Answer = 1) || (user_answer = 0 && t.Answer = 0) then
+                    "Correct,"
+                else
+                    "Wrong,"
+
+            //play tutorial
+            if t.IsTutorial then
+                wait 1.0f<s>
+                yield
+                    Answer.TutorialAnswer <- t.Answer
+                    Answer.PlayTutorial <- true
+                wait 2.0f<s>
+                yield
+                    Answer.PlayTutorial <- false
+                    TaskIndex <- TaskIndex + 1
+            //update report
+            else
+                let report_msg = (string (TaskIndex + 1)) + "," + report_answer + elapsed_time
+                yield
+                    //Answer.YesPressed <- false
+                    //Answer.NoPressed <- false
+                    TaskIndex <- TaskIndex + 1
+                    Report.WriteLine <- report_msg
+
+
+        yield Game.Quit <- true
+
+    Create(game : CasanovaGame<DyslexiaDetector>) =
+        let date = System.DateTime.Now
+        let year = string date.Year
+        let month = string date.Month
+        let day = string date.Day
+        let hour = string date.Hour
+        let minute = string date.Minute
+        let second = string date.Second
+        let fox_size = Vector2<pixel>.Create(150.0f)
+        let file_name = day + "_" + month + "_" + year + "_" + hour + "_" + minute + "_" + second + ".csv"
+        let tasks = InputParser.parseInput(@"Content\tracks.csv")
+        let fox_pos = Vector2<pixel>.Create(-50.0f,150.0f)
+        let full_screen = true
+        let horizontal_resolution = 1280
+        let vertical_resolution = 768
+        //let game = CasanovaGame.Create(full_screen,horizontal_resolution,vertical_resolution)
+        let background = ParallaxBackground.Create(game.default_layer)
+        let precache_y_buttons = Sprite.Create(background.ForegroundCanvas,Vector2<pixel>.Zero,Vector2<pixel>.Create(250.0f),@"yes_frames")
+        let precache_n_buttons = Sprite.Create(background.ForegroundCanvas,Vector2<pixel>.Zero,Vector2<pixel>.Create(250.0f),@"no_frames")
+        {
+            Game = game
+            Tasks = empty()
+            ParsedTasks = tasks
+            TaskIndex = 0
+            Layers = background
+            Answer = Button.Create(background.ForegroundCanvas,Vector2<pixel>.Create(0.0f,390.0f))
+            Fox = Animal.Create("fox_walking","fox_singing", "fox",4,15,0.3f<s>,0.08f<s>,background.ForegroundCanvas,fox_pos,Vector2<1>.Create(1.5f,1.5f),fox_size,fox_pos)
+            Bird = Animal.Create("bird","bird","bird",1,1,1.0f<s>,1.0f<s>,background.ForegroundCanvas,Vector2<pixel>.Create(0.0f,110.0f),Vector2<1>.Zero,Vector2<pixel>.Zero,Vector2<pixel>.Zero)
+            ActiveSong = Song.Create(game.Content)
+            Playing = false
+            Report = FileWriter.Create("Report",file_name)
+        }
+  }
+
+entity Button =
+  {
+    YesPressed                  : bool
+    NoPressed                   : bool
+    Sprite                      : Sprite
+    PlayTutorial                : bool
+    TutorialAnswer              : int
+    TutorialFrames              : int
+    Frame                       : int
+    
+    rule YesPressed,NoPressed =
+        let pos = Sprite.Position
+        let size = Sprite.Size
+        let w = size.X
+        let h = size.Y
+
+        //upper left corner of the full image
+        let u_l  = Vector2<pixel>.Create(pos.X - size.X / 2.0f,pos.Y - size.Y / 2.0f)
+
+        //normalized button radius
+        let r = 118.0f / 798.0f * h
+
+        //normalized center coordinates of the left button
+        let nclx = 240.0f / 798.0f * w
+        let ncly = 289.0f / 798.0f * h
+
+        //normalized center coordinates of the right button
+        let ncrx = 553.0f / 798.0f * w
+        let ncry = 288.0f / 798.0f * h
+
+        //left button center point
+        let cl = Vector2<pixel>.Create((u_l.X + nclx) * 1.0f<1/pixel>,(u_l.Y + ncly) * 1.0f<1/pixel>)
+        //right button center point
+        let cr = Vector2<pixel>.Create((u_l.X + ncrx) * 1.0f<1/pixel>,(u_l.Y + ncry) * 1.0f<1/pixel>)
+
+        wait_until is_mouse_left_down()
+        wait_until is_mouse_left_up()
+
+        let mouse_x,mouse_y = mouse_position()
+        let v_pos = Vector2<pixel>.Create(mouse_x,mouse_y)
+        let c = Sprite.Canvas
+        let unproj_v = c.Unproject(v_pos)
+        printfn "Mouse pos: %f,%f" (unproj_v.X / 1.0f<pixel>) (unproj_v.Y / 1.0f<pixel>)
+        
+        //click inside left circle button
+        if (unproj_v.X - cl.X) * (unproj_v.X - cl.X) + (unproj_v.Y - cl.Y) * (unproj_v.Y - cl.Y)  < r * r && not PlayTutorial then
+            yield true,false
+        if (unproj_v.X - cr.X) * (unproj_v.X - cr.X) + (unproj_v.Y - cr.Y) * (unproj_v.Y - cr.Y) < r * r  && not PlayTutorial then
+            yield false,true
+        wait 0.1f<s>
+        yield false,false
+
+
+    rule Sprite =
+        wait_until ((not YesPressed) && (not NoPressed))
+        yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,Sprite.Position,Sprite.Size,@"both_up")
+        wait_until (YesPressed || NoPressed)
+
+    rule Sprite,Frame =
+        wait_until not PlayTutorial
+        yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,Sprite.Position,Sprite.Size,@"both_up"),0
+        wait_until PlayTutorial
+    
+    rule Sprite =
+        if not PlayTutorial then
+            if YesPressed then
+                yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,Sprite.Position,Sprite.Size,@"Yes_down")
+            elif NoPressed then
+                yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,Sprite.Position,Sprite.Size,@"No_down")
+    
+    rule Sprite,Frame =
+      wait_until PlayTutorial
+      let texture =
+        if TutorialAnswer = 1 then
+            @"yes_frames"
+        else
+            @"no_frames"
+      yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,
+                                           Sprite.Position,
+                                           Sprite.Size,
+                                           Sprite.Scale,                                                    
+                                           Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 TutorialFrames) - 0.5f, -0.5f),
+                                                            1.0f<pixel> / (float32 TutorialFrames), 1.0f<pixel>), 
+                                           texture), 0       
+      //printfn "Rectangle Width: %f | Rectangle Height: %f | Frame: %d\n" (Sprite.Rectangle.Width * 1.0f<1/pixel>) (Sprite.Rectangle.Height * 1.0f<1/pixel>) Frame
+      wait_until not PlayTutorial
+    
+    rule Sprite.SourceRectangle =
+        let frames =
+            if PlayTutorial then
+                5
+            else
+                1
+        yield Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 frames) - 0.5f, -0.5f),
+                                       1.0f<pixel> / (float32 frames), 1.0f<pixel>)
+
+        //wait 0.2f<s>
+        (*while PlayTutorial do
+            yield Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 TutorialFrames) - 0.5f, -0.5f),
+                                       1.0f<pixel> / (float32 TutorialFrames), 1.0f<pixel>)
+            wait 0.2f<s>*)
+    
+    rule Frame =
+        wait_until PlayTutorial
+        yield 0
+        wait 0.2f<s>
+        yield 1
+        wait 0.2f<s>
+        yield 2
+        wait 0.2f<s>
+        yield 3
+        wait 0.2f<s>
+        yield 4
+        wait 0.2f<s>
+        wait_until not PlayTutorial
+
+
+
+    Create (canvas : Canvas,pos:Vector2<pixel>) =
+      {
+        Sprite = Sprite.Create(canvas,pos,Vector2<pixel>.Create(250.0f),@"both_up")
+        YesPressed = false
+        NoPressed = false
+        PlayTutorial = false
+        TutorialAnswer = 0
+        TutorialFrames = 5
+        Frame = 0
+      }       
+    }
+
+
+entity Animal =
+  {
+    Sprite              : Sprite
+    Position            : Vector2<pixel>
+    Velocity            : Vector2<pixel/s>
+    Destination         : Vector2<pixel>
+    SpriteScale         : Vector2<1>
+    SpriteSize          : Vector2<pixel>
+    Moving              : bool
+    Singing             : bool
+    Frame               : int
+    WalkingTexture      : string
+    SingingTexture      : string
+    StandingTexture     : string
+    NumSingingFrames    : int
+    NumWalkingFrames    : int
+    WalkingFrameTime    : float32<s>
+    SingingFrameTime    : float32<s>
+    
+    rule Sprite.Scale = yield SpriteScale
+    rule Sprite.Position = yield Position
+
+    rule Position =
+        yield Position + Velocity * dt
+    
+    rule Velocity,Position =       
+        if Moving then
+            let p_to_c =
+                if (Destination - Position).Length <= 0.00001f<pixel> then
+                    Vector2<1>.Zero
+                else
+                    Vector2.Normalize(Destination - Position)
+            yield p_to_c * 1250.0f<pixel/s>, Position
+            wait_until (Vector2.Dot(p_to_c, Vector2.Normalize(Destination - Position)) < 0.0f)
+            yield Vector2.Zero, Destination
+        
+    rule Sprite, Frame =
+      wait_until Moving
+      yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,
+                                           Position,
+                                           SpriteSize,
+                                           SpriteScale,                                                    
+                                           Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 NumWalkingFrames) - 0.5f, -0.5f),
+                                                            1.0f<pixel> / (float32 NumWalkingFrames), 1.0f<pixel>), 
+                                           WalkingTexture), 0
+            
+      wait_until not Moving
+    
+    rule Sprite, Frame =
+      wait_until Singing
+      yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,
+                                           Position,
+                                           SpriteSize,
+                                           SpriteScale,
+                                           Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 NumSingingFrames) - 0.5f, -0.5f),
+                                                                                  1.0f<pixel> / (float32 NumSingingFrames), 1.0f<pixel>),
+                                           SingingTexture),0
+                    
+      wait_until not Singing
+
+    rule Sprite,Frame =
+      wait_until not Singing && not Moving
+      yield Casanova.Drawing.Sprite.Create(Sprite.Canvas,
+                                           Position,
+                                           SpriteSize,
+                                           SpriteScale,
+                                           StandingTexture), 0
+      wait_until Singing || Moving
+            
+    rule Sprite.SourceRectangle,Frame =
+        while Moving do
+            yield 
+                Sprite.SourceRectangle <- 
+                  Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 NumWalkingFrames) - 0.5f, -0.5f),
+                                   1.0f<pixel> / (float32 NumWalkingFrames), 1.0f<pixel>)
+                Frame <- (Frame + 1) % NumWalkingFrames
+            wait WalkingFrameTime
+
+    rule Sprite.SourceRectangle,Frame =
+        while Singing do
+            yield   
+                Sprite.SourceRectangle <- 
+                    Rectangle.Create(Vector2<pixel>.Create(float32 Frame / (float32 NumSingingFrames) - 0.5f, -0.5f),
+                                     1.0f<pixel> / (float32 NumSingingFrames), 1.0f<pixel>)
+                Frame <- (Frame + 1) % NumSingingFrames
+            wait SingingFrameTime
+
+    Create (walking_texture : string, singing_texture : string, standing_texture : string,
+            num_wf ,num_sf, walking_ft, singing_ft,
+            canvas : Canvas, pos : Vector2<pixel>, scale : Vector2<1>, size : Vector2<pixel>, destination : Vector2<pixel>) =
+      {
+          Sprite = Sprite.Create(canvas,pos,size,scale,walking_texture)
+          Moving = false
+          Singing = false
+          Frame = 0
+          Position = pos
+          Velocity = Vector2<pixel/s>.Zero
+          Destination = destination
+          SpriteScale = scale
+          SpriteSize = size
+          StandingTexture = standing_texture
+          WalkingTexture = walking_texture
+          SingingTexture = singing_texture
+          NumSingingFrames = num_sf
+          NumWalkingFrames = num_wf
+          WalkingFrameTime = walking_ft
+          SingingFrameTime = singing_ft
+      }
+  }
+
+entity Fox = Animal
+entity Bird = Animal
+
+entity Task =
+  {
+    Answer          : int
+    Bird            : Bird
+    Content         : ContentManager
+    Song            : Song
+    IsTutorial      : bool
+    
+    Create (task_number : int, song_name : string, answer : int, canvas : Canvas, content : ContentManager, is_tutorial : bool) =
+      let angle = float32 task_number * (2.0f * two_pi / 11.0f)
+      let pos = Vector2<pixel>.Create(627.0f,-625.0f)
+      let bird_size = Vector2<pixel>.Create(200.0f)
+      let destination =
+        match task_number % 11 with
+        | 0 -> Vector2<pixel>.Create(50.0f,-125.0f)
+        | 1 -> Vector2<pixel>.Create(118.0f,-93.0f)
+        | 2 -> Vector2<pixel>.Create(198.0f,-115.0f)
+        | 3 -> Vector2<pixel>.Create(291.0f,-18.33f)
+        | 4  -> Vector2<pixel>.Create(186.0f,-66.0f)
+        | 5  -> Vector2<pixel>.Create(200.0f,-101.0f)
+        | 6  -> Vector2<pixel>.Create(336.0f,13.0f)
+        | 7  -> Vector2<pixel>.Create(150.0f,-118.0f)
+        | 8  -> Vector2<pixel>.Create(203.0f,-36.0f)
+        | 9  -> Vector2<pixel>.Create(-25.0f,-75.0f)
+        | 10  -> Vector2<pixel>.Create(61.0f,-76.0f)
+        | _  -> failwith "Error in task index generation"
+      {
+          Content = content
+          Answer = answer
+          Bird = Animal.Create(@"bird_flying",@"bird_singing",@"bird",4,12,0.3f<s>,0.1f<s>,canvas,pos,Vector2<1>.One,bird_size,destination)
+          Song = Song.Create(content,@"Tracks\" + song_name)
+          IsTutorial = is_tutorial
+      }
+  }
+
+entity ParallaxBackground =
+  {
+    SkyCanvas           : Canvas
+    BackSkyCanvas       : Canvas
+    BackgroundCanvas    : Canvas
+    ForegroundCanvas    : Canvas
+
+    Sky                 : Sprite
+    Clouds              : List<Cloud>
+    Background          : Sprite
+    Foreground          : Sprite
+    
+    RotationAngle       : float32<rad>
+    RotationVelocity    : float32<rad/s>
+
+    rule RotationAngle = yield RotationAngle + RotationVelocity * dt
+    rule Foreground.Rotation = yield RotationAngle
+    rule Background.Rotation = yield RotationAngle * 0.25f
+
+    Create(layer : SpriteLayer) =
+      let background_canvas = Canvas.Create(layer, Vector2<_>.Zero, Vector2<_>.One * 1000.0f, StretchMode.Uniform)
+      let foreground_canvas = Canvas.Create(layer, Vector2<_>.Zero, Vector2<_>.One * 1000.0f, StretchMode.Uniform) 
+      let sky_canvas = Canvas.Create(layer, Vector2<_>.Zero, Vector2<_>.One * 1000.0f, StretchMode.UniformToFill)
+      let back_sky_canvas = Canvas.Create(layer, Vector2<_>.Zero, Vector2<_>.One * 1000.0f, StretchMode.UniformToFill)
+      let small_cloud_speed = Vector2<pixel/s>.Create(40.0f,0.0f)
+      let small_cloud_size = Vector2<pixel>.Create(50.0f,50.0f)
+      let big_cloud_size = 4.0f * small_cloud_size
+      let big_cloud_speed = Vector2<pixel/s>.Create(20.0f,0.0f)
+      {
+          RotationVelocity = 0.0f<rad/s>
+          RotationAngle = 0.0f<rad>
+          SkyCanvas = sky_canvas
+          BackSkyCanvas = back_sky_canvas
+          BackgroundCanvas = background_canvas
+          ForegroundCanvas = foreground_canvas
+          Sky = Sprite.Create(sky_canvas, Vector2<pixel>.Create(0.0f, 0.0f), Vector2<pixel>.Create(1000.0f, 1000.0f),@"backgroundSky")
+          Clouds =
+            [
+                Cloud.Create(sky_canvas,big_cloud_size,big_cloud_speed,-500.0f<pixel>);
+                Cloud.Create(sky_canvas,big_cloud_size,big_cloud_speed,-300.0f<pixel>);
+                Cloud.Create(sky_canvas,big_cloud_size,big_cloud_speed,-150.0f<pixel>);
+                Cloud.Create(sky_canvas,big_cloud_size,big_cloud_speed,0.0f<pixel>);
+                Cloud.Create(sky_canvas,big_cloud_size,big_cloud_speed,250.0f<pixel>);
+                Cloud.Create(sky_canvas,big_cloud_size,big_cloud_speed,400.0f<pixel>);
+            ]
+          Background = Sprite.Create(background_canvas, Vector2<pixel>.Create(5.0f, 850.0f), Vector2<pixel>.Create(2250.0f, 2250.0f),@"ground_back")
+          Foreground = Sprite.Create(foreground_canvas, Vector2<pixel>.Create(0.0f, 850.0f), Vector2<pixel>.Create(2250.0f, 2250.0f),@"ground_mid")
+      }
+
+  }
+
+entity Cloud =
+  {
+    Sprite          : Sprite
+    Velocity        : Vector2<pixel/s>
+    
+    rule Sprite.Position = yield Sprite.Position + Velocity * dt
+
+    rule Sprite.Position =
+        if Sprite.Position.X > 600.0f<pixel> then
+            let rnd_height = random_range(-25.0f,25.0f)
+            yield Vector2<pixel>.Create(-600.0f,Sprite.Position.Y * 1.0f<1 / pixel> + rnd_height)
+          
+    rule Velocity =
+        if Velocity.Y > 0.0f<pixel/s> then
+            yield Vector2<pixel/s>.Create(0.0f, Velocity.Y * -1.0f<s/pixel>)
+          
+    Create (canvas : Canvas,size : Vector2<pixel>,velocity : Vector2<pixel/s>, pos_x : float32<pixel>) =
+      let rnd_height = -50.0f<pixel> - (random_range(0.0f<pixel>,150.0f<pixel>))
+      let rnd_speed = random_range(velocity.X / 3.0f * -1.0f<s/pixel>,velocity.X / 3.0f * 1.0f<s/pixel>)
+      let origin = Vector2<pixel>.Zero
+      let sprite, velocity =
+          match random_interval(1, 4) with
+          | 1 ->
+              Sprite.Create(canvas, 
+                            Vector2<pixel>.Create(pos_x,origin.Y + rnd_height), 
+                            size,
+                            @"cloud1",
+                            random_float()), (velocity + (Vector2<pixel/s>.Create(rnd_speed,0.0f)))
+          | 2 ->
+              Sprite.Create(canvas, 
+                            Vector2<pixel>.Create(pos_x,origin.Y + rnd_height), 
+                            size,
+                            @"cloud2",
+                            random_float()), (velocity + (Vector2<pixel/s>.Create(rnd_speed,0.0f)))
+          | 3 ->
+              Sprite.Create( canvas, 
+                             Vector2<pixel>.Create(pos_x,origin.Y + rnd_height), 
+                             size,
+                             @"cloud3",
+                             random_float()), (velocity + (Vector2<pixel/s>.Create(rnd_speed,0.0f)))
+          | _ -> failwith "Invalid cloud texture index"
+      { Sprite    = sprite
+        Velocity  = velocity }
+  }
