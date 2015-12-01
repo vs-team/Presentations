@@ -1,0 +1,224 @@
+\documentclass{beamer}
+\usetheme[hideothersubsections]{HRTheme}
+\usepackage{beamerthemeHRTheme}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{MnSymbol}
+
+\title{Casanova: a language for game development}
+
+\author{Dr. Giuseppe Maggiore}
+
+\institute{Hogeschool Rotterdam \\ 
+Rotterdam, Netherlands}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\SlideSection{Introduction}
+\SlideSubSection{Lecture topics}
+\begin{slide}{
+\item The relevance of games and beyond
+\item A brief introduction to game architectures
+\item Are we missing a language?
+\item Casanova as a first step towards a solution
+}\end{slide}
+
+\SlideSection{The relevance of games and beyond}
+\SlideSubSection{Background}
+\begin{slide}{
+\item Games are a huge market (\textbf{b}illions of worth, countless hours spent)
+\item Changing the entertainment landscape, overtaking music and movies
+\item Large industry, with lots of technical innovation and inspiring work
+}\end{slide}
+
+\SlideSubSection{Beyond entertainment}
+\begin{slide}{
+\item The success of games is inspiring more and more people
+\item What if we can make other stuff as engaging?
+\item And so, \textit{serious games} are born
+}\end{slide}
+
+\SlideSubSection{Serious games}
+\begin{slide}{
+\item Using game mechanics to bring serious applications to life
+\item Simulators, training applications, rehabilitation, school, and much more
+\item Countless applications could benefit from games, accelerating progress and culture from many angles
+}\end{slide}
+
+\SlideSubSection{What is stopping us?}
+\begin{slide}{
+\item Great, so where is my ``learn math by blowing zombies up'' game?
+\item Serious games makers do not have huge resources
+\item Here comes the problem: \textbf{games are very hard and expensive to build}
+\pause
+\item \textbf{This heavily impacts the viability of games in such innovative applications}
+}\end{slide}
+
+\SlideSubSection{Our take}
+\begin{slide}{
+\item Our goal is to study and optimize the technical aspects of game development
+\item We look for complexity in the process and try to automate it
+\item We focus on the \textit{programming languages} side of the equation\footnote{There are many others!}
+}\end{slide}
+
+\SlideSection{A brief introduction to game architectures}
+\SlideSubSection{The game loop - a source of complexity}
+\begin{slide}{
+\item Games need to run in real time
+\item Frames must be sent to the screen at 30/60Hz
+\item It's all a big loop!
+}\end{slide}
+
+\begin{frame}[fragile]{A very simplified game architecture}
+\begin{lstlisting}
+state = GameState()
+while Running:
+  state = update(state, dt)
+  state.Draw()
+\end{lstlisting}
+\end{frame}
+
+\SlideSubSection{The game loop - a source of complexity}
+\begin{slide}{
+\item \texttt{update} covers the dynamics of the game
+\item The game is a \textit{hybrid system}
+\item The continuous parts are simple: just integrate numerically (\texttt{P = P + V * dt})
+\item The discrete parts are less simple: large concurrent state machines!
+}\end{slide}
+
+\begin{frame}[fragile]{Discrete architectures}
+\begin{codewithblock}{\pause \item That's not how we think!}
+switch action:
+  case RUNNING:
+    ...
+  case FIGHTING:
+    ...
+  ...
+\end{codewithblock}
+\end{frame}
+
+\SlideSection{Are we missing a language?}
+\SlideSubSection{Idea}
+\begin{slide}{
+\item Most of what makes a game a game is the discrete part of the dynamics
+\item Create interesting patterns that introduce \textit{controlled} variation
+\item These dynamics define game logic, AI, and more
+}\end{slide}
+
+\begin{frame}[fragile]{Specification of discrete dynamics}
+\begin{codewithblock}{\pause \item Now imagine the ``big switch'' to implement this}
+repeat
+  for c in checkpoints:
+    velocity = normalize(position - c)
+    wait (distance(position, c) < 1m)
+    animation = look around
+    wait 3s
+\end{codewithblock}
+\end{frame}
+
+\SlideSection{Abstraction mismatch}
+\begin{slide}{
+\item The description of these dymamics is usually difficult to find back in code
+\item In this translation we lose a lot of the original intention
+\item It is harder to maintain, extend, and experiment with code
+}\end{slide}
+
+\SlideSection{Existing solutions}
+\begin{slide}{
+\item There are possible solutions (threads, strategy pattern, monadic coroutines, etc.)
+\item They all suffer from performance drawbacks, and have lots of hidden complexities
+}\end{slide}
+
+\SlideSection{Casanova as a first step towards a solution}
+\begin{slide}{
+\item We will now present Casanova, a domain specific language (DSL) for game development
+\item The language has time as a first class primitive
+\item All computations are specified as transformations of the state
+\item Continuous and discrete dynamics are both directly supported
+}\end{slide}
+
+\begin{frame}[fragile]{Continuous dynamics}
+\begin{lstlisting}
+entity Asteroid = {
+  inherit UnityAsteroid
+  Velocity : Vector3
+  
+  rule Position = Position + Velocity * dt
+
+  Create() =
+  {
+    Velocity      = new Vector3(...)
+    UnityAsteroid = UnityAsteroid.Instantiate(...)
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Discrete dynamics}
+\begin{lstlisting}
+worldEntity World = {
+  inherit UnityBob
+
+  rule Velocity, CurrentAnimation = 
+    for c in Checkpoints do
+      let dir0 = c - Position
+      yield dir0, BobAnimation.Walk
+      wait Vector3.Dot(dir0, c - Position) < 0.0f
+      yield Vector3.zero, BobAnimation.Idle
+      wait 1.0f
+
+  Create() =
+    {
+      UnityBob = UnityBob.Find()
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\SlideSubSection{Ok, surely it does not work?}
+\begin{slide}{
+\item We have been eating our own dog food quite extensively :)
+\item We have built a lot of samples and smaller games with Casanova
+\pause
+\item The good: quite simply, \textbf{it works}
+\item The bad: has a bit of a learning curve
+}\end{slide}
+
+\begin{pictureSlide}{someGames.png}{8}
+\end{pictureSlide}
+
+
+\SlideSection{Conclusion}
+\SlideSubSection{Lecture topics}
+\begin{slide}{
+\item Game dynamics are hard to express
+\item By defining programming languages that support the building blocks of these dynamics, we can achieve higher productivity
+\item Games have a huge potential, and this way we hope to unlock it
+}\end{slide}
+
+\begin{thankyou}
+\end{thankyou}
+
+\end{document}
+
+\begin{slide}{
+\item ...
+}\end{slide}
+
+\begin{frame}[fragile]
+\begin{lstlisting}
+...
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{codewithblock}{\item $x^y + \sum_i i^2$}
+if x > y then 
+  print x 
+else 
+  print y
+\end{codewithblock}
+\end{frame}
