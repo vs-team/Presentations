@@ -1,0 +1,299 @@
+\documentclass{beamer}
+\usetheme[hideothersubsections]{HRTheme}
+\usepackage{beamerthemeHRTheme}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+
+\title{Sapir-Whorf and programming languages}
+
+\author{Dr. G. Maggiore}
+
+\institute{Hogeschool Rotterdam \\ 
+Rotterdam, Netherlands}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\SlideSection{Introduction}
+\SlideSubSection{Lecture topics}
+\begin{slide}{
+\item Linguistic relativity in natural languages
+\item From natural to artificial (programming) languages
+\item Syntax, semantics, and translatability (Turing-equivalence)
+\item Linguistic relativity in artificial languages
+\item (Designing artificial languages)
+}\end{slide}
+
+\SlideSubSection{Problem discussion}
+\begin{slide}{
+\item Reasoning about languages, expressive power, and potential for translation
+\item Using artificial, mathematical languages to quantify these concepts
+}\end{slide}
+
+\SlideSubSection{Linguistic relativity in natural languages (\textit{Sapir–Whorf hypothesis})}
+\begin{slide}{
+\item Structure of a language affects world view and/or cognitive processes
+\item Strong version \textbf{language determines thought}
+\item Weak version \textbf{language influences thought}
+}\end{slide}
+
+\SlideSubSection{Relevance for philosophy, psychology, and linguistics}
+\begin{slide}{
+\item Are human psychological faculties innate, or are they a result of learning?
+\item Universalism: same biological construct makes culture irrelevant
+\item Constructivism: human faculties and concepts come from socially constructed and learned categories
+}\end{slide}
+
+\begin{slide}{
+\item Relation between language and thought
+\item Universalism: thought as a form of innate internal speech
+\item Constructivism: thought is learned while acquiring language
+}\end{slide}
+
+\begin{slide}{
+\item Ultimately, it boils down to a deep question
+\item Is there an objectively known/knowable reality, shared by all humans?
+\item If so, is this reality objectively depicted with language constructs, and thus communicable?
+\item If not, how do we bridge the gap between languages?
+}\end{slide}
+
+\SlideSubSection{Examples}
+\begin{slide}{
+\item In English, WATER is described with many possible words
+\begin{itemize}
+\item water as a LIQUID
+\item water in the form of a large expanse (LAKE)
+\item water as running in a large body or in a small body (RIVER and BROOK)
+\item water in the form of RAIN, DEW, WAVE, and FOAM
+\item ... 
+\end{itemize}
+}\end{slide}
+
+\begin{slide}{
+\item In Eskimo, SNOW is described with many possible words
+\begin{itemize}
+\item \textit{aput}, expressing SNOW ON THE GROUND
+\item \textit{qana}, FALLING SNOW
+\item \textit{piqsirpoq}, DRIFTING SNOW
+\item \textit{qimuqsuq}, A SNOWDRIFT
+\item ... 
+\end{itemize}
+}\end{slide}
+
+\begin{slide}{
+\item Guugu Yimithirr (Australian aboriginal language) only uses absolute directions when describing spatial relations
+\item A person is \textit{north of the house}, not \textit{in front of the house}
+\item Guugu Yimithirr speakers are better at navigating open terrain
+\item English speakers are better at positioning objects relative to the speaker 
+\begin{itemize}
+\item For example consider describing a round table with forks to the right of the plate and knives to the left in Guugu Yimithirr
+\end{itemize}
+}\end{slide}
+
+\SlideSubSection{Central question}
+\begin{slide}{
+\item \textbf{Does the choice of language make us more or less effective at experiencing, navigating, and communicating the world?}
+}\end{slide}
+
+\SlideSection{From natural to artificial (programming) languages}
+\SlideSubSection{Introduction}
+\begin{slide}{
+\item Languages are not limited to natural ones
+\item There are many artificial languages of daily use
+\item Think of the one closest to you... \pause \textbf{in your pocket: your mobile phone GUI!}
+}\end{slide}
+
+\SlideSubSection{The computer-whisperer}
+\begin{slide}{
+\item Communication with machines happens through a variety of (programming) languages
+\item Some very limited languages are simple visual tools and GUI's
+\item Some very complex programming languages (PL's) have full blown syntaxes and semantics
+}\end{slide}
+
+\begin{slide}{
+\item Modern computers seem to be capable of amazing approximations of complex human thoughts
+\item Issue is, computers are \textbf{very fast at being very stupid}
+\item PL's are complex, articulated, and hard to use
+}\end{slide}
+
+\begin{slide}{
+\item Note the plural: language\textbf{S}
+\item Why would there be multiple languages to talk to computers, which are the same? \pause Because of linguistic relativity!
+\item It is empirically evident that 
+\begin{itemize}
+\item Different PL's have...
+\item ...different expressive power...
+\item ...in some specific domain(s)
+\end{itemize}
+}\end{slide}
+
+\begin{slide}{
+\item Different PL's have different expressive power
+\item Assembly language
+\begin{itemize}
+\item Expresses any possible program
+\item Is very fast
+\item Is very verbose
+\item Accepts many nonsensical programs
+\item Works in terms of machine capabilities
+\end{itemize}
+\item Haskell
+\begin{itemize}
+\item Expresses only non-strict programs
+\item Is very slow
+\item Is very compact
+\item Accepts very few nonsensical programs
+\item Works in terms of categorical constructions
+\end{itemize}
+}\end{slide}
+
+\SlideSection{Syntax, semantics, and Turing-completeness}
+\SlideSubSection{Introduction}
+\begin{slide}{
+\item Let us now take a (shallow) dive in the core of PL's
+\item We begin with the lambda calculus ($\lambda$-calculus)
+}\end{slide}
+
+\SlideSubSection{Syntax of the $\lambda$-calculus}
+\begin{textslide}{
+Valid programs are made up of
+\begin{description}
+\item[variables] $x$
+\item[functions] $\lambda x.t$
+\item[applications] $t\ s$
+\end{description}
+}\end{textslide}
+
+\SlideSubSection{$\beta$ semantics of the $\lambda$-calculus}
+\begin{slide}{
+\item Semantics of the $\lambda$-calculus are based on rewriting
+\item There is nothing but the language, transforming into itself
+\item Complex concepts are thus \textit{unfolded} from abstracted descriptions
+\item \textbf{Language is thought and thought is language}
+}\end{slide}
+
+\begin{slide}{
+\item $(\lambda x.M) N \rightarrow_\beta M[x \mapsto N] $
+\item \textbf{Meaning as transformation}
+}\end{slide}
+
+\SlideSubSection{Representation of Church/Peano numerals}
+\begin{textslide}{
+\begin{description}
+\item[\texttt{0}] $\lambda s.\lambda z.z$
+\item[\texttt{1}] $\lambda s.\lambda z.s\ z$
+\item[\texttt{2}] $\lambda s.\lambda z.s(s\ z)$
+\item[\texttt{N}] $\lambda s.\lambda z.s^N\ z$
+\end{description}
+}\end{textslide}
+
+\begin{textslide}{
+\begin{description}
+\item[\texttt{PLUS}] $\lambda m.\lambda n.\lambda s.\lambda z.m\ s\ (n\ s\ z)$
+\item[\texttt{MULT}] $\lambda m.\lambda n.m\ (PLUS\ n)\ 0$
+\end{description}
+}\end{textslide}
+
+\SlideSubSection{Other languages}
+\begin{slide}{
+\item The $\lambda$-calculus is not the only possible core language
+\item Combinatory logic is also another possibility\footnote{Just look at the shape of the languages, complete understanding is not needed!}
+}\end{slide}
+
+\SlideSubSection{Syntax and semantics of combinatory logic}
+\begin{textslide}{
+Valid programs are made up of
+\begin{description}
+\item[I] $Ix \rightarrow x$
+\item[K] $Kxy \rightarrow x$
+\item[S] $Sxyz \rightarrow xz(yz)$
+\item[B] $Bxyz \rightarrow x(yz)$
+\item[C] $Cxyz \rightarrow xzy$
+\end{description}
+}\end{textslide}
+
+\SlideSubSection{Combinatory logic vs $\lambda$-calculus}
+\begin{slide}{
+\item Clearly two very different things
+\item Can one do things the other cannot?
+\pause
+\item \textbf{No!} They are absolutely equivalent
+\item We can translate back and forth without losing expressive power
+}\end{slide}
+
+\begin{pictureSlide}{translationLambdaCL.PNG}{10}
+\end{pictureSlide}
+
+\SlideSection{Linguistic relativity in artificial languages}
+\SlideSubSection{A partial conclusion}
+\begin{slide}{
+\item Within the logical domain, there is no difference in expressive power
+\item When a language becomes powerful enough, then any concept can be expressed in it
+}\end{slide}
+
+\begin{slide}{
+\item A PL is \textbf{powerful enough} according to the Church-Turing hypothesis
+\item Translate back and forth into the $\lambda$-calculus
+\item No language was ever found\footnote{Yet.} that can express programs that the $\lambda$-calculus cannot
+}\end{slide}
+
+\SlideSubSection{Translatability is not equivalence?}
+\begin{slide}{
+\item Some programs in one language are very short in the other (reading overhead)
+\item Some proofs/tests of correctness in one language are very compact in the other (verification overhead)
+\item Some programs in one language are very fast in the other (runtime overhead)
+\item ...
+}\end{slide}
+
+\begin{slide}{
+\item Performance in writing, executing, and reasoning about programs make a lot of difference
+\item A lot of progress\footnote{From self-driving cars to intelligent robots} hinges on our ability to write better software
+\item Bugs do sometimes cost millions\footnote{Mariner I}, or even lives\footnote{Toyota accelerator}
+}\end{slide}
+
+\begin{slide}{
+\item As we put machine intelligence in charge of cranes, cars, money, and private information, the centrality of programming and PL's becomes even more prominent
+\item For this reason new PL's are designed almost constantly
+\item Some of these are domain specific, others attempt to be a \textit{Jack of all trades}
+}\end{slide}
+
+\begin{slide}{
+\item The Sapir-Whorf hypothesis remains, even in the PL's world
+\item The choice of PL's changes the ability of a programmer to build things with it
+\item We look for the abstract patterns of the previous generation of languages and turn them into syntactic and semantic constructions
+}\end{slide}
+
+\SlideSubSection{Candidates for language design elements}
+\begin{slide}{
+\item Time and concurrency
+\item Image processing/machine learning
+\item Totality of functions (termination)
+\item ...
+}\end{slide}
+
+\SlideSection{Conclusion}
+\SlideSubSection{Looking back}
+\begin{slide}{
+\item Available language constructs influence thoughts
+\item PL's target machines instead of other humans, but have the same issues
+\item Modern research in PL's is looking for \textit{Holy-Grail languages}
+\item With the ideal PL, it might be possible to unlock new frontiers of computation and bring on new information revolutions
+}\end{slide}
+
+\begin{thankyou}
+\end{thankyou}
+
+\end{document}
+
+\begin{slide}{
+\item ...
+}\end{slide}
+
+\begin{frame}[fragile]
+\begin{lstlisting}
+...
+\end{lstlisting}
+\end{frame}
