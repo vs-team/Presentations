@@ -1,0 +1,442 @@
+\documentclass{beamer}
+\usetheme[hideothersubsections]{HRTheme}
+\usepackage{beamerthemeHRTheme}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage{multirow}
+\usepackage{MnSymbol}
+
+\title{Introducing Casanova 2, a pragmatic domain specific language for game development}
+
+\author{\textbf{Mohamed Abbadi}}
+
+
+\institute{\textbf{Ca'Foscari University}\\ 
+Venice, Italy\\
+\textbf{Tilburg University}\\
+Tilburg, Netherlands}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\SlideSection{Introduction}
+\SlideSubSection{Lecture topics}
+\begin{slide}{
+\item The relevance of games and beyond
+\item A brief introduction to game architectures
+\item Are we missing a language?
+\item Casanova as a first step towards a solution
+\item Current state of progress
+}\end{slide}
+
+\SlideSection{The relevance of games and beyond}
+\SlideSubSection{Background}
+\begin{slide}{
+\item Games are a huge market (\textbf{b}illions of worth, countless hours spent)
+\item Changing the entertainment landscape, overtaking music and movies
+\item Large industry, with lots of technical innovation and inspiring work
+}\end{slide}
+
+\SlideSubSection{Beyond entertainment}
+\begin{slide}{
+\item The success of games is inspiring more and more people
+\item What if we can make other stuff as engaging?
+\item And so, \textit{serious games} are born
+}\end{slide}
+
+\SlideSubSection{Serious games}
+\begin{slide}{
+\item Using game mechanics to bring serious applications to life
+\item Simulators, training applications, rehabilitation, school, and much more
+\item Countless applications could benefit from games, accelerating progress and culture from many angles
+}\end{slide}
+
+\SlideSubSection{What is stopping us?}
+\begin{slide}{
+\item Great, so where is my ``learn math by blowing zombies up'' game?
+\item Serious games makers do not have huge resources
+\item Here comes the problem: \textbf{games are very hard and expensive to build}
+\pause
+\item \textbf{This heavily impacts the viability of games in such innovative applications}
+}\end{slide}
+
+\SlideSubSection{Our take}
+\begin{slide}{
+\item Our goal is to study and optimize the technical aspects of game development
+\item We look for complexity in the process and try to automate it
+\item We focus on the \textit{programming languages} side of the equation\footnote{There are many others!}
+}\end{slide}
+
+\SlideSection{A brief introduction to game architectures}
+\SlideSubSection{The game loop - a source of complexity}
+\begin{slide}{
+\item Games need to run in real time
+\item Frames must be sent to the screen at 30/60Hz
+\item It's all a big loop!
+}\end{slide}
+
+\begin{frame}[fragile]{A very simplified game architecture}
+\begin{lstlisting}
+state = GameState()
+while Running:
+  state = update(state, dt)
+  state.Draw()
+\end{lstlisting}
+\end{frame}
+
+\SlideSubSection{The game loop - a source of complexity}
+\begin{slide}{
+\item \texttt{update} covers the dynamics of the game
+\item The game is a \textit{hybrid system}
+\item The continuous parts are simple: just integrate numerically (\texttt{P = P + V * dt})
+\item The discrete parts are less simple: large concurrent state machines!
+}\end{slide}
+
+\begin{frame}[fragile]{Discrete architectures}
+\begin{codewithblock}{\pause \item That's not how we think!}
+switch action:
+  case RUNNING:
+    ...
+  case FIGHTING:
+    ...
+  ...
+\end{codewithblock}
+\end{frame}
+
+\SlideSection{Are we missing a language?}
+\SlideSubSection{Idea}
+\begin{slide}{
+\item Most of what makes a game a game is the discrete part of the dynamics
+\item Create interesting patterns that introduce \textit{controlled} variation
+\item These dynamics define game logic, AI, and more
+}\end{slide}
+
+\begin{frame}[fragile]{Specification of discrete dynamics}
+\begin{codewithblock}{\pause \item Now imagine the ``big switch'' to implement this}
+repeat
+  for c in checkpoints:
+    velocity = normalize(c - position)
+    wait (distance(position, c) < 1m)
+    animation = look around
+    wait 3s
+\end{codewithblock}
+\end{frame}
+
+\SlideSection{Abstraction mismatch}
+\begin{slide}{
+\item The description of these dymamics is usually difficult to find back in code
+\item In this translation we lose a lot of the original intention
+\item It is harder to maintain, extend, and experiment with code
+}\end{slide}
+
+\SlideSection{Existing solutions}
+\begin{slide}{
+\item There are possible solutions (threads, strategy pattern, monadic coroutines, etc.)
+\item They all suffer from performance drawbacks, and have lots of hidden complexities
+}\end{slide}
+
+\SlideSection{Casanova as a first step towards a solution}
+\begin{slide}{
+\item We will now present Casanova, a domain specific language (DSL) for game development
+\item The language has time as a first class primitive
+\item All computations are specified as transformations of the state
+\item Continuous and discrete dynamics are both directly supported
+}\end{slide}
+
+\begin{frame}[fragile]{Continuous dynamics}
+\begin{lstlisting}
+entity Asteroid = {
+  inherit UnityAsteroid
+  Velocity : Vector3
+  
+  rule Position = Position + Velocity * dt
+
+  Create() =
+  {
+    Velocity      = new Vector3(...)
+    UnityAsteroid = UnityAsteroid.Instantiate(...)
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Discrete dynamics}
+\begin{lstlisting}
+worldEntity World = {
+  inherit UnityBob
+
+  rule Velocity, CurrentAnimation = 
+    for c in Checkpoints do
+      let dir0 = c - Position
+      yield dir0, BobAnimation.Walk
+      wait Vector3.Dot(dir0, c - Position) < 0.0f
+      yield Vector3.zero, BobAnimation.Idle
+      wait 1.0f
+
+  Create() =
+    {
+      UnityBob = UnityBob.Find()
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\SlideSubSection{Ok, surely it does not work?}
+\begin{slide}{
+\item We have been eating our own dog food quite extensively :)
+\item We have built a lot of samples and smaller games with Casanova
+\pause
+\item The good: quite simply, \textbf{it works}
+\item The bad: has a bit of a learning curve
+}\end{slide}
+
+\SlideSubSection{Demo}
+\begin{pictureSlide}
+{someMoreGames.png}{8}
+\end{pictureSlide}
+
+\begin{picturetextslide}{someGames.png}{8}{
+\item \url{www.youtube.com/watch?v=_dE3EQ_aPbE&sns=em}}
+\end{picturetextslide}
+
+
+%DESIGN and IMPLEMENTATION
+\SlideSection{Casanova design}
+\SlideSubSection{Syntax}
+\begin{frame}[fragile]{Syntax}
+\tiny	
+\begin{lstlisting}[showstringspaces=false]
+<Program> ::=
+  <moduleStatement> {<openStatement>}
+  <worldDecl> {<entityDecl>}
+
+<moduleStatement> ::= module id
+<openStatemnt>    ::= open id
+<worldDecl>    ::= world id ["("<formals>")"] =
+                   <worldOrEntityDecl>
+<entityDecl>   ::= entity id ["("<formals>")"] =
+                   <worldOrEntityDecl>
+<worldOrEntityDecl> ::= "{" <entityBlock> "}"
+<entityBlock>  ::= {<fieldDecl>} {<ruleDecl>}
+<create>
+<create> ::= Create "(" {<formals>} ") = <expr>
+<formals>   ::= id [":" <type>] {"," <formals>}
+<fieldDecl> ::= id [":" <type>]
+<ruleDecl>  ::= rule id {"," id} "=" <expr>
+<type>      ::= int |boolean  |float |Vector2
+                |Vector3 |string |char
+                |list "<" <type> ">" |<generic>
+                |<type> "[" "]" |id
+<generic>     ::= "'" id
+<expr> ::= ...(* typical expressions : let, if,
+                 for , while , new, etc. *)
+           | wait (<arithExpr> | <boolExpr>)
+           | yield | <arithExpr> | <boolExpr>
+           | <literal> | <queryExpr> | <seq>
+<seq>        ::= <expr> <expr>
+<arithExpr>  ::= ...//arithmetic expressions
+<boolExpr>   ::= ...//boolean expressions
+<literal>    ::= ...//strings , numbers
+<queryExpr>  ::= ...//query expressions
+\end{lstlisting}
+\end{frame}
+
+\SlideSubSection{Semantics - re-write based}
+\begin{frame}[fragile]{Semantics - re-write based}
+\tiny	
+\begin{lstlisting}[showstringspaces=false]
+E = { Field$_1$ = f$_1$; $\dots$; Field$_n$ = f$_n$;
+Rule$_1$ = r$_1$; $\dots$; Rule$_m$ = r$_m$ }
+
+tick(e:E, dt) =
+  { Field$_1$=tick(f$_1^m$, dt); $\dots$; Field$_n$=tick(f$_n^m$, dt);
+    Rule$_1$=r$_1'$; $\dots$; Rule$_m$=r$_m'$ }
+  where
+    f$_1^m$, $\dots$, f$_n^m$, r$_m'$ = step(f$_1^{m-1}$, $\dots$, f$_n^{m-1}$, r$_m$)
+    .
+    .
+    f$_1^1$, $\dots$, f$_n^1$, r$_1'$ = step(f$_1$, $\dots$, f$_n$, r$_1$)
+
+
+step(f$_1$, $\dots$, f$_n$, {let x = y in r$'$}) =
+step(f$_1$, $\dots$, f$_n$, r$'$[x:=y])
+
+step(f$_1$, $\dots$, f$_n$, {if x then r$'$ else r$''$; r$'''$})
+  when (x = true) = step(f$_1$, $\dots$, f$_n$, {r$'$; r$'''$})
+
+step(f$_1$, $\dots$, f$_n$, {if x then r$'$ else r$''$; r$'''$})
+  when (x = false) = step(f$_1$, $\dots$, f$_n$, {r$''$; r$'''$})
+.
+.
+step(f$_1$, $\dots$, f$_n$, {for x in [] do r$'$; r$''$})
+  step(f$_1$, $\dots$, f$_n$, r$''$)
+\end{lstlisting}
+\end{frame}
+
+\SlideSection{Implementation}
+\SlideSubSection{Compiler}
+\begin{slide}{
+\item Casanova has its own compiler 
+\item The first version used the open F\# compiler as back-end
+\begin{itemize}
+\item Pros: Fast to set up
+\item Cons: lack of control over code transformations
+\end{itemize}
+\item The current version is \textit{layer based}. We wrote our own back-end, which now produces C\#
+\begin{itemize}
+	\item Pros: complete control, C\# can be run on several OS and tools
+	\item Cons: complex to build, scalability issues
+\end{itemize}
+}\end{slide}
+
+
+\begin{slide}{
+\item Control over layers transformation and domain syntax and semantics allows code optimization
+\item Generated code uses low level constructs to achieve high performance
+\item[] 
+\hspace{-1cm}
+\begin{minipage}[t]{.4\textwidth}
+\begin{table}[!t]
+\tiny
+\caption{Cnv performance}
+\begin{tabular}{|c||c|}
+	\hline
+	Language & Time per frame\\
+	\hline
+	Casanova & 0.07ms\\
+	\hline
+	C\# & 0.12ms\\
+	\hline
+	JavaScript & 24.07ms \\
+	\hline
+	Lua & 20.90ms\\
+	\hline
+	Python & 20.15ms \\
+	\hline
+\end{tabular}
+\end{table}
+\end{minipage}% 
+\begin{minipage}[t]{.6\textwidth}
+
+\begin{table}[!ht]
+\tiny
+\caption{Cnv vs Cnv opt}
+\begin{tabular}{ @{}|c|c|c|c|@{} }
+\hline
+Platform & Language & Optimized & Performance\\ \hline
+\multirow{3}{*}{Monogame}
+& Casanova & No & 0.0159 ms\\
+& Casanova & Yes & 0.0098 ms\\
+& C\# &   - & 0.0147 ms\\ \hline
+\multirow{3}{*}{Unity3D}
+& Casanova & No & 0.0257 ms\\
+& Casanova & Yes & 0.0085 ms\\
+& C\# &   - & 0.1642 ms\\ \hline
+\hline
+\end{tabular}
+\end{table}
+\end{minipage}
+}\end{slide}
+
+\SlideSubSection{What is Casanova?}
+\begin{slide}{
+\item Language features
+\begin{itemize}
+	\item It is a domain language
+	\item Hybrid (OO, Functional, Declarative)
+	\item Statically compiled
+	\item Performance oriented
+\end{itemize}
+\item Compatibility (so far)
+\begin{itemize}
+\item Unity (web, mobile, desktop)
+\item Lego Mindstorm V3
+\item Monogame
+\item ...
+\end{itemize}
+}\end{slide}
+
+
+\SlideSection{Usability}
+\SlideSubSection{Ease of use}
+%USABILITY
+\begin{slide}{
+\item An important part of my research
+\item Early results suggested us to compile Cnv into C\# and to use Unity as rendering tool
+\item Cnv has been used for a year intensively by a group of 6 internship students 
+\item 3 already done workshops on Casanova
+\item[]
+\begin{itemize}
+\item \includegraphics[width=1cm]{game_on.png},  latest workshop run at UoA 
+\end{itemize}
+\item Usability goals
+\begin{itemize}
+\item Perfect the quality of our tools
+\item Possibly adapt/introduce new features
+\end{itemize}
+}\end{slide}
+
+
+%WRITTEN CONTRIBUTION
+\SlideSection{Written conributions}
+\SlideSubSection{Research progress}
+\begin{pictureSlideWithCaption}
+{research_progress.png}{8}{Research progress}
+\end{pictureSlideWithCaption}
+%publications
+% already published
+% in progress
+% book chapter
+
+%USABILITY
+\begin{slide}{
+\item Papers
+\begin{itemize}
+\item Title: Resource Entity Action: A Generalized Design Pattern for RTS games (Springer)
+\item Title: Casanova. A simple, high-performance language for game development (Springer)
+\item Title: High performance encapsulation in Casanova 2 (IEEE)
+\item Title: Making RTS games in Casanova (not submitted yet)
+\end{itemize}
+\item Book chapter
+\begin{itemize}
+	\item Title: Serious Games (Springer)
+\end{itemize}
+\item \textbf{LOTS} of Samples, workshop materials, and a collection of on-line tutorials
+}\end{slide}
+
+\SlideSection{Conclusion}
+\SlideSubSection{Conclusion}
+\begin{slide}{
+\item Game dynamics are hard to express
+\item By defining programming languages that support the building blocks of these dynamics, we can achieve higher productivity
+\item Games have a huge potential, and with Casanova we hope to unlock it
+\item[]
+\item \url{https://github.com/vs-team/casanova-mk2/wiki}
+}\end{slide}
+
+\begin{thankyou}
+\end{thankyou}
+
+\end{document}
+
+\begin{slide}{
+\item ...
+}\end{slide}
+
+\begin{frame}[fragile]
+\begin{lstlisting}
+...
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{codewithblock}{\item $x^y + \sum_i i^2$}
+if x > y then 
+  print x 
+else 
+  print y
+\end{codewithblock}
+\end{frame}
